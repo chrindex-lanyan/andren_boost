@@ -9,6 +9,61 @@
 #include <functional>
 #include <map>
 
+
+
+/*
+
+协议设计
+    数据包分组、拆分和组装：
+
+    将大于N字节的数据包拆分成一组fragment。
+    每个组拥有魔术字作为协议头、
+        唯一组ID（GID）、
+        总数据大小（size_t size）、
+        优先级(gPrio)、
+        最大的fragment大小N、
+        fragment数量count、
+        一组fragment。
+
+    每个fragment的数据部分大小不超过N字节。
+
+    每个fragment包含魔术字作为协议头、
+        一个唯一ID（FID，从1开始递增）、
+        组ID、
+        数据部分、
+        数据大小字段。
+
+    N>=16 bytes。X >=1 。GID>=1 。FID>=1 。三者都是uint64_t。
+
+请求-响应机制：
+    request和response都有拥有魔术字作为协议头。
+    发送方发送一个request，指定
+        fragment的数量、
+        总数据大小、
+        组ID、
+        请求的优先级、
+        最大fragment大小N、
+        其他（拓展字段）。
+
+    接收方收到request后，返回response表示是否接受这次传输（accept或者reject）。
+    response字段：
+        state：OK/NO （string）；
+        transfer：accept / reject / retry （string）；
+        target-gid（uint64_t）； 
+        target-fid （uint64_t）；
+        errors （string）; 
+        errorcode(int)； 
+        其他（拓展字段）；
+
+优先级和队列管理：
+
+    使用优先队列（std::priority_queue）来管理待发送fragment队列。
+    队列按照组的优先级（gPrio）对fragment进行排序。
+    队列一次最大容纳X个fragment ，高优先级的先占用，但至少给低优先级的预留一个位置。
+    gPrio = { p |   pNum > p > 1   } ， p越大优先级越高，pNum推荐为5。
+*/
+
+
 namespace chrindex::andren_boost
 {
     // 数据碎片
@@ -119,11 +174,11 @@ namespace chrindex::andren_boost
         uint64_t target_gid;
 
         // 控制字段相关的碎片ID
-        //target-fid （uint64_t）；
+        // target-fid （uint64_t）；
         uint64_t target_fid;
 
         // 错误码。
-        //errorcode(int)； 0->(OK) | otherwise->(error)
+        // errorcode(int)； 0->(OK) | otherwise->(error)
         int32_t errorcode = 0;
 
         // 拓展码。供用户自由使用。
@@ -142,7 +197,7 @@ namespace chrindex::andren_boost
         std::string transfer;
 
         // 错误提示信息。
-        //errorstr （string）; 
+        // errorstr （string）; 
         // { uint16_t size; char const *  }
         // 尽量不要超过256字节。
         std::string errorstr;
