@@ -1,6 +1,3 @@
-[submodule "third_part/submodule"]
-	path = third_part/submodule
-	url = https://github.com/chrindex-lanyan/andren
 [submodule "third_part/submodule/andren"]
 	path = third_part/submodule/andren
 	url = https://github.com/chrindex-lanyan/andren
