@@ -1,9 +1,10 @@
 #pragma once
 
-#include <exception>
+
 #include <sys/socket.h>
 #include <future>
 #include <tuple>
+#include <exception>
 
 #ifndef BOOST_ASIO_HAS_CO_AWAIT
 #define BOOST_ASIO_HAS_CO_AWAIT
@@ -19,6 +20,8 @@
 #include <boost/asio/co_spawn.hpp>
 #include <boost/asio/detached.hpp>
 #include <boost/asio/io_context.hpp>
+
+#include "co_websocket.hh"
 
 namespace chrindex::andren_boost
 {
@@ -52,6 +55,8 @@ namespace chrindex::andren_boost
         ip::tcp::endpoint peer_endpoint() const;
 
         ip::tcp::endpoint self_endpoint() const;
+
+        co_websocket cover_as_websocket();
 
     private :
         ip::tcp::socket sock;

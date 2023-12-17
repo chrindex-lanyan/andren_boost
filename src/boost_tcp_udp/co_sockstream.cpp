@@ -1,4 +1,5 @@
 #include "co_sockstream.hh"
+#include "co_websocket.hh"
 
 #include <algorithm>
 #include <exception>
@@ -97,6 +98,11 @@ namespace chrindex::andren_boost
     ip::tcp::endpoint co_sockstream::self_endpoint() const
     {
         return sock.local_endpoint();
+    }
+
+    co_websocket co_sockstream::cover_as_websocket()
+    {
+        return co_websocket(std::move(sock));
     }
 
 }
