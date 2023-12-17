@@ -12,7 +12,7 @@ namespace chrindex::andren_boost
     co_sockstream_awaiter::co_sockstream_awaiter(io_context::executor_type & executor, std::string const & ip, int port)
         : acceptor(executor , ip::tcp::endpoint(ip::address::from_string(ip), port))
     {
-        acceptor.listen(1024);
+        acceptor.listen(boost::asio::socket_base::max_listen_connections);
     }
 
     co_sockstream_awaiter::~co_sockstream_awaiter(){}
