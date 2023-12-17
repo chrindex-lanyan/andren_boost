@@ -35,102 +35,164 @@
 
     N>=16 bytes。X >=1 。GID>=1 。FID>=1 。三者都是uint64_t。
 
+    fragment字段：
+        magic_number (uint64_t)
+        gid (uint64_t)    
+        fid (uint64_t)  
+        data_size (uint32_t) 
+        data (bytes[data_size])
+    
+    fragment_group字段：
+        magic_number (uint64_t)
+        gid (uint64_t)
+        fragment_count (uint64_t) // size = { x | 0 < x < $(int32_max)  }
+        all_data_size (uint64_t)
+        fragment_data_maxium_size (uint32_t) // 推荐设为256~4096字节
+        priority (uint32_t)
+        all_fragments (std::deque<fragment_t>);
+
 请求-响应机制：
     request和response都有拥有魔术字作为协议头。
-    发送方发送一个request，指定
-        fragment的数量、
-        总数据大小、
-        组ID、
-        请求的优先级、
-        最大fragment大小N、
-        其他（拓展字段）。
+    发送方发送一个request，接收方收到request后，
+    返回response表示是否接受这次传输（accept或者reject）。
 
-    接收方收到request后，返回response表示是否接受这次传输（accept或者reject）。
+    request字段：
+        magic_number (uint64_t)
+        gid (uint64_t) 
+        fragment_count (uint64_t) 
+        all_data_size (uint64_t) 
+        fragment_data_maxium_size (uint32_t) 
+        extention_code (uint32_t)
+
     response字段：
-        state：OK/NO （string）；
-        transfer：accept / reject / retry （string）；
-        target-gid（uint64_t）； 
-        target-fid （uint64_t）；
-        errors （string）; 
-        errorcode(int)； 
-        其他（拓展字段）；
+        magic_number (uint64_t)
+        target_gid (uint64_t)； 
+        target_fid (uint64_t)；
 
+        /// OK = 100, 接收完成。
+        ///   在全部接收完fragment后回复一次。
+        ///   也可以在中途适当地回复，
+        ///   这样发送端知道要不要继续发送。
+        /// 
+        /// ACCEPT, 同意接收该Group。
+        ///
+        /// REJECT, 拒绝接收该Group。
+        ///
+        /// RETRY, 重传目标帧。
+        /// ERROR, 响应方发生错误。
+        /// NONE , 双方什么也不需要做。
+        ///   该字段也可以测试双方服务的可用性。
+        state (int32_t)；
+
+        extention_code (int32_t)
+    
 优先级和队列管理：
 
     使用优先队列（std::priority_queue）来管理待发送fragment队列。
-    队列按照组的优先级（gPrio）对fragment进行排序。
+    队列按照组的优先级（priority）对fragment进行排序。
     队列一次最大容纳X个fragment ，高优先级的先占用，但至少给低优先级的预留一个位置。
-    gPrio = { p |   pNum > p > 1   } ， p越大优先级越高，pNum推荐为5。
+    priority = { p |   pNum > p > 1   } ， p越大优先级越高，pNum推荐为5。
+    优先队列容量建议设置为128，最好不要小于4，不应小于2。
 */
 
 
 namespace chrindex::andren_boost
 {
+
+    #define DEFAULT_MAGIC_NUM_64 0x0a1b2c3e4f5e6c7b
+    #define DEFAULT_PRIORITY_CAPACITY 256
+
     // 数据碎片
     struct fragment_t 
     {
-        // 固定的协议头。
-        // 默认情况是： 0x0A1B2C3E4F5E6C7B , 共8字节。
-        uint64_t magic_number = 0x0a1b2c3e4f5e6c7b ; 
+        struct _head_t
+        {
+            uint64_t magic_number = DEFAULT_MAGIC_NUM_64 ; 
+            uint64_t fid = 0;           // FID
+            uint64_t gid = 0;           // GID
+            uint32_t data_size = 0;     // data size
+            char _reverse[4];
+        } head;
 
-        uint64_t fid;    // FID
-        uint64_t gid;    // GID
+        struct _data_t
+        {
+            char first_byte;
+            char _reverse[7];
+        } data;
 
-        // { uint32_t size; char const *  }
-        std::string data; // Data and Data's size
+        fragment_t() = default;
+        ~fragment_t() = default;
 
-        fragment_t():fid(0), gid(0){}
+        /// 除数据字段以外，fragment头部字段所需大小
+        static size_t fragment_head_size();
 
-        fragment_t(uint64_t uid, uint64_t gid, size_t size, const std::string& d)
-            : fid(uid), gid(gid), data(d) {}
+        /// 提供必要数据，并将mutable_buffer的数据
+        /// 改为fragment结构数据。
+        /// 注意，返回的fragment指针，其生命周期不应短于
+        /// mutable_buffer的生命周期。
+        static fragment_t const * 
+            create_fragment_from_buffer(
+                std::string & mutable_buffer,
+                uint64_t gid,
+                uint64_t fid,
+                std::string const & data 
+            );
 
-        ~fragment_t(){}
-
-        size_t data_size() const;
-
-        std::string create_fragment() const;
+        /// 获取整个fragment包的大小（head + data部分）。
+        size_t fragment_package_size() const;
     };
 
-    // 数据碎片的优先队列比较器
-    struct fragment_comparable_t {
-        bool operator()(const fragment_t& f1, const fragment_t& f2) const {
-            return f1.gid == f2.gid ? f1.fid > f2.fid : f1.gid > f2.gid;
-        }
-    };
 
     // 碎片组及碎片组生产者
     struct fragment_group_t
     {
-        // 固定的协议头。
-        // 默认情况是： 0x0A1B2C3E4F5E6C7B , 共8字节。
+        using fragment_buffer_t = std::string;
+
         uint64_t magic_number = 0x0a1b2c3e4f5e6c7b ; 
-
-        uint64_t gid; // Group ID . ID >= 1
+        uint64_t gid; // Group ID 
         uint32_t priority; // 优先级
-        uint32_t fragment_data_maxium_size; // size = { x | 0 < x < $(int32_max)  }
-        uint64_t fragment_count;
-        uint64_t all_data_size;
-        std::deque<fragment_t> all_fragments;
 
-        fragment_group_t()
-            : gid(0) ,fragment_data_maxium_size(0), 
-                fragment_count(0), all_data_size(0) {}
-                
-        
-        fragment_group_t(uint64_t _gid , uint64_t _fragment_maxium_size)
-            : gid(_gid) ,fragment_data_maxium_size(_fragment_maxium_size),
-                fragment_count(0),all_data_size(0) {}
+        // 单个fragment数据大小（不含head）
+        uint32_t fragment_data_maxium_size; 
+        uint64_t fragment_count; // fragment总数
+
+        // 总数据大小（全部fragment的data的大小总和）
+        uint64_t all_data_size;  
+
+        // 已打包好的fragment结构（以buffer呈现）
+        std::deque<fragment_buffer_t> all_fragment_buffer;
+
+        fragment_group_t()= default;
 
         ~fragment_group_t()=default;
 
-        fragment_group_t & set_gid(uint64_t group_id);
+        bool operator>(fragment_group_t const & _ano)const 
+        {
+            return priority > _ano.priority;
+        }
 
-        fragment_group_t & set_fragment_maxium_size(uint64_t size);
+        bool operator<(fragment_group_t const & _ano)const 
+        {
+            return priority<_ano.priority;
+        }
 
-        bool push_data_and_finish(std::string const & data);
+        bool operator==(fragment_group_t const & _ano)const 
+        {
+            return priority == _ano.priority;
+        }
 
-        std::tuple<bool , uint64_t, fragment_t const *> 
-        fetch_one_fragment();
+        /// 初始化一个新的fragment_group
+        bool init_a_new_group(
+            uint64_t group_id,
+            uint32_t group_priority,
+            uint32_t single_fragment_data_maxium_size
+        );
+
+        /// 获取全部fragment_t的引用的数组。
+        /// 被引用的fragment_t在fragment_group_t
+        /// 的生命周期内有效。
+        std::vector<fragment_t const *> 
+            all_fragment_reference() const;
 
     };
 
@@ -138,28 +200,32 @@ namespace chrindex::andren_boost
     struct fragment_group_request_t
     {
         // 固定的协议头。
-        // 默认情况是： 0x0A1B2C3E4F5E6C7B , 共8字节。
         uint64_t magic_number = 0x0a1b2c3e4f5e6c7b ; 
         uint64_t gid = 0;   // 组ID
         uint64_t fragment_count = 0; // 碎片数量
         uint64_t all_data_size = 0; // 数据段数据总大小
 
         // 单个碎片的数据段最大字节数。
-        // 请注意, size = { x | 0 < x < $(uint32_max) }，
-        // 但是请尽量控制在 16 ~ 4096 之间。
         uint32_t fragment_data_maxium_size = 0; 
-        uint32_t extention_code = 0; // 扩展用的预留字段，供用户自由使用。
 
-        // { uint16_t size; char const *  }
-        // 扩展用的预留字段，供用户自由使用。 
-        // 字段长度s = { x | 0 <= x < $(uint16_max)  }
-        // 请尽量不要超过256字节。
-        std::string extention_data;
+        // 扩展用的预留字段，供用户自由使用。
+        uint32_t extention_code = 0; 
 
         fragment_group_request_t () = default;
         ~ fragment_group_request_t () = default;
 
         std::string create_request() const;
+    };
+
+    enum class fragment_group_response_state_code : int32_t
+    {
+        NONE,
+        OK = 100, 
+        ACCEPT,
+        REJECT,
+        RETRY,
+        ERROR,
+        
     };
 
     // 碎片组传输请求的响应
@@ -170,37 +236,21 @@ namespace chrindex::andren_boost
         uint64_t magic_number = 0x0a1b2c3e4f5e6c7b ; 
 
         // 控制字段相关的组ID、回应状态或错误的组ID。
-        // target-gid（uint64_t）； 
-        uint64_t target_gid;
+        // 必须对该字段赋值，
+        // 否则请求方不知道这是哪个组的response。
+        uint64_t target_gid = 0;
 
         // 控制字段相关的碎片ID
-        // target-fid （uint64_t）；
-        uint64_t target_fid;
+        // 根据情况选择是否需要对此字段赋值。
+        uint64_t target_fid = 0;
 
-        // 错误码。
-        // errorcode(int)； 0->(OK) | otherwise->(error)
-        int32_t errorcode = 0;
+        // 状态字段
+        fragment_group_response_state_code
+            state_code = 
+                fragment_group_response_state_code::NONE;
 
         // 拓展码。供用户自由使用。
         int32_t extention_code = 0;
-
-        // 状态字段
-        // state：OK/NO （string）或自定义；
-        // { uint16_t size; char const *  }
-        // 尽量不要超过256字节。
-        std::string state;
-
-        // 传输控制字段
-        // transfer：accept / reject / retry （string）或自定义；
-        // { uint16_t size; char const *  }
-        // 尽量不要超过256字节。
-        std::string transfer;
-
-        // 错误提示信息。
-        // errorstr （string）; 
-        // { uint16_t size; char const *  }
-        // 尽量不要超过256字节。
-        std::string errorstr;
 
         fragment_group_response_t (){}
 
@@ -213,33 +263,20 @@ namespace chrindex::andren_boost
     // 碎片组发送器
     struct fragment_group_sender_t
     {
-        using OnResponse = 
-            std::function<void(fragment_group_response_t const &)>;
-
-        using OnSendDone =
-            std::function<void(uint64_t gid)>;
-
-        using OnErrors = 
-            std::function<void(uint64_t gid ,int32_t sender_errcode)>;
+        fragment_group_sender_t() = default;
+        ~fragment_group_sender_t () = default;
 
         
-        // 按优先级对碎片组进行排序，并通过组ID区分不同组。
-        // < priority , < gid, fragment_group > >
-        std::map<uint32_t , std::map<uint64_t,fragment_group_t>> groups;
 
-        // 下一批要发送的数据。
-        // <priority , std::string (fragment) >
-        std::map<uint32_t , std::string> ready_data;
-
+    private :
+        std::map<uint64_t,fragment_group_t> groups;
+        std::priority_queue<fragment_t *> m_readyque;
     };
 
     // 碎片组接收器
     struct fragment_group_receiver_t
     {
-        using OnRequest = 
-            std::function<void(fragment_group_request_t const &)>;
-
-
+        //
     };
 
     
