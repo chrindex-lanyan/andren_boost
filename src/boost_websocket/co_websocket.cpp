@@ -1,8 +1,21 @@
 ﻿#include "co_websocket.hh"
 
+#include <boost/asio/use_awaitable.hpp>
+#include <boost/asio/awaitable.hpp>
+#include <boost/asio/co_spawn.hpp>
+#include <boost/asio/detached.hpp>
+
+#include <boost/asio/io_context.hpp>
+#include <boost/beast/core/error.hpp>
+#include <boost/beast/http/field.hpp>
+#include <boost/beast/http/fields.hpp>
+#include <future>
+
 
 namespace  chrindex::andren_boost
 {
+    using namespace boost::asio;
+
     co_websocket::co_websocket(){}
     co_websocket::co_websocket(co_websocket && _ano) noexcept
     {
@@ -49,6 +62,28 @@ namespace  chrindex::andren_boost
         }
     }
 
+    void co_websocket::set_handshake_message(websocket_type_t type, std::string_view _msg)
+    {
+        std::string msg ( _msg.data() , _msg.size() );
+        http::field name = http::field::server;
+
+        if (type == websocket_type_t::SERVER)
+        {
+            name = http::field::server;
+        }
+        else if( type == websocket_type_t::CLIENT)
+        {
+            name = http::field::user_agent;
+        }
+        websocket().set_option(websocket::stream_base::decorator(
+            [msg = std::move(msg), name]
+            (websocket::response_type& res)
+        {
+            res.set(name,
+                msg);
+        }));
+    }
+
     bool co_websocket::set_other_option(std::function<void (websocket_type * ws_ptr)> cb)
     {
         if (!cb)
@@ -75,6 +110,17 @@ namespace  chrindex::andren_boost
             return websocket_data_type_t::TEXT;
         }
         return websocket_data_type_t::BINARY;
+    }
+
+    awaitable<bool> co_websocket::handshake_with_server
+        (std::string host, std::string target)
+    {
+        if (is_empty())
+        {
+            co_return false;
+        }
+        co_await websocket().async_handshake(host, target,use_awaitable);
+        co_return true;
     }
 
     awaitable<std::tuple<int64_t, std::string>> 
@@ -107,7 +153,7 @@ namespace  chrindex::andren_boost
         co_return co_await try_send(std::string(data));
     }
 
-    co_websocket::websocket_type & co_websocket:: websocket() 
+    co_websocket::websocket_type & co_websocket::websocket() 
     {
         return *m_websocket;
     }

@@ -1,29 +1,32 @@
 ﻿#pragma once
 
-
-
+#include <thread>
+#include <chrono>
 #include <memory>
 #include <optional>
 #include <future>
 #include <stdexcept>
 #include <tuple>
 #include <exception>
+#include <string_view>
+#include <coroutine>
+
 
 #ifndef BOOST_ASIO_HAS_CO_AWAIT
 #define BOOST_ASIO_HAS_CO_AWAIT
 #endif
 
-#include <boost/asio/ip/address.hpp>
 #include <boost/system/error_code.hpp>
-#include <boost/asio/io_context.hpp>
+#include <boost/asio/ip/address.hpp>
 #include <boost/asio/ip/tcp.hpp>
-#include <boost/beast/core/buffers_to_string.hpp>
+#include <boost/asio/awaitable.hpp>
 #include <boost/asio/use_awaitable.hpp>
 #include <boost/asio/this_coro.hpp>
 #include <boost/asio/co_spawn.hpp>
 #include <boost/asio/detached.hpp>
 #include <boost/asio/io_context.hpp>
 
+#include <boost/beast/core/buffers_to_string.hpp>
 #include <boost/beast/core.hpp>
 #include <boost/beast/websocket/stream.hpp>
 #include <boost/beast/websocket.hpp>
@@ -70,7 +73,11 @@ namespace chrindex::andren_boost
 
         void set_websocket_type(websocket_type_t type);
 
+        void set_handshake_message(websocket_type_t type, std::string_view msg);
+
         bool set_other_option(std::function<void (websocket_type * ws_ptr)> cb);
+
+        awaitable<bool> handshake_with_server(std::string host, std::string target);
 
         awaitable<std::tuple<int64_t, std::string>> 
             try_recv() ;
