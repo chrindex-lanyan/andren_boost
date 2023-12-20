@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include <cstdint>
+#include <sstream>
 #include <utility>
 #include <string>
 #include <queue>
@@ -8,7 +9,10 @@
 #include <tuple>
 #include <functional>
 #include <map>
+#include <optional>
 
+
+#include "circleque.hpp"
 
 
 /*
@@ -17,7 +21,8 @@
     数据包分组、拆分和组装：
 
     将大于N字节的数据包拆分成一组fragment。
-    每个组拥有魔术字作为协议头、
+    每个组拥有魔术字作为协议头,该魔术头区分数据帧为request、response还是fragment。
+    其他成员：
         唯一组ID（GID）、
         总数据大小（size_t size）、
         优先级(gPrio)、
@@ -52,7 +57,8 @@
         all_fragments (std::deque<fragment_t>);
 
 请求-响应机制：
-    request和response都有拥有魔术字作为协议头。
+    request和response都有拥有魔术字作为协议头，
+    该魔术头区分数据帧为request、response还是fragment。
     发送方发送一个request，接收方收到request后，
     返回response表示是否接受这次传输（accept或者reject）。
 
@@ -99,7 +105,9 @@
 namespace chrindex::andren_boost
 {
 
-    #define DEFAULT_MAGIC_NUM_64 0x0a1b2c3e4f5e6c7b
+    #define DEFAULT_FRAGMENT_MAGIC_NUM_64 0x0a1b2c3e4f5e6c7b
+    #define DEFAULT_REQUEST_MAGIC_NUM_64 0x9a8b7c6e5f4e3c2b
+    #define DEFAULT_RESPONSE_MAGIC_NUM_64 0x5a6b9c3e7f2e1c0b
     #define DEFAULT_PRIORITY_CAPACITY 256
 
     // 数据碎片
@@ -107,7 +115,7 @@ namespace chrindex::andren_boost
     {
         struct _head_t
         {
-            uint64_t magic_number = DEFAULT_MAGIC_NUM_64 ; 
+            uint64_t magic_number = DEFAULT_FRAGMENT_MAGIC_NUM_64 ; 
             uint64_t fid = 0;           // FID
             uint64_t gid = 0;           // GID
             uint32_t data_size = 0;     // data size
@@ -130,6 +138,7 @@ namespace chrindex::andren_boost
         /// 改为fragment结构数据。
         /// 注意，返回的fragment指针，其生命周期不应短于
         /// mutable_buffer的生命周期。
+        /// mutable_buffer的内存和大小会被调整。
         static fragment_t const * 
             create_fragment_from_buffer(
                 std::string & mutable_buffer,
@@ -200,7 +209,7 @@ namespace chrindex::andren_boost
     struct fragment_group_request_t
     {
         // 固定的协议头。
-        uint64_t magic_number = 0x0a1b2c3e4f5e6c7b ; 
+        uint64_t magic_number = DEFAULT_REQUEST_MAGIC_NUM_64 ; 
         uint64_t gid = 0;   // 组ID
         uint64_t fragment_count = 0; // 碎片数量
         uint64_t all_data_size = 0; // 数据段数据总大小
@@ -233,7 +242,7 @@ namespace chrindex::andren_boost
     {
         // 固定的协议头。
         // 默认情况是： 0x0A1B2C3E4F5E6C7B , 共8字节。
-        uint64_t magic_number = 0x0a1b2c3e4f5e6c7b ; 
+        uint64_t magic_number = DEFAULT_RESPONSE_MAGIC_NUM_64 ; 
 
         // 控制字段相关的组ID、回应状态或错误的组ID。
         // 必须对该字段赋值，
@@ -259,24 +268,130 @@ namespace chrindex::andren_boost
         std::string create_request(uint64_t your_gid) const;
     };
 
-
     // 碎片组发送器
     struct fragment_group_sender_t
     {
         fragment_group_sender_t() = default;
         ~fragment_group_sender_t () = default;
 
-        
+        /// 添加一个已经创建好的组，加入未决表，
+        /// 返回一个初始化好的组发送请求。
+        /// 用户可以更改其中的extention_code字段。
+        std::optional<fragment_group_request_t> 
+            append_group(fragment_group_t && group);
+
+        /// 提供一个响应，该响应将决定是否将该组从未决表和等待表，
+        /// 如果未在未决表中查询到指定的组，则返回false。
+        bool notify_a_group(fragment_group_response_t & response);
+
+        enum class from_map_enum :int 
+        {
+            PENDING_MAP,
+            WAITING_MAP,
+        };
+
+        /// 查询一个组，从未决表或等待表，
+        /// 返回这个组的引用。
+        fragment_group_t * 
+            find_group_reference(uint64_t gid, 
+                from_map_enum from_map);
+
+        /// 取出一次队列数据，
+        /// 数据可能会比较大。 
+        /// 数据大小 约等于 就绪队列.size() * 单个fragment大小。
+        /// 返回拼接好的数据
+        std::string 
+            fecth_some_data();
+
+        /// 从等待表分配一些fragment到就绪队列。
+        /// 返回的是本次分配的数量。
+        size_t flush();
 
     private :
-        std::map<uint64_t,fragment_group_t> groups;
+
+        /// 未决表，
+        /// 尚未决定是否要发送的组。
+        std::map<uint64_t , fragment_group_t> pending_groups;
+
+        /// 等待表，
+        /// 等待发送的组。
+        std::map<uint64_t,fragment_group_t> wait_groups;
+
+        /// 就绪表，
+        /// 准备下一轮被发送的片段。
         std::priority_queue<fragment_t *> m_readyque;
     };
 
     // 碎片组接收器
     struct fragment_group_receiver_t
     {
-        //
+        fragment_group_receiver_t(){}
+
+        ~fragment_group_receiver_t(){}
+        
+        /// 添加一些数据，
+        /// 数组会在此被解开成一个或多个fragment、request、response。
+        size_t append_some_data(std::string && data);
+
+        /// 取出一个已经完成接收的数据组。
+        std::optional<fragment_group_t> 
+            fecth_one_completed_group();
+
+        /// 取出一个接收到的数据组发送请求。
+        std::optional<fragment_group_request_t> 
+            fecth_one_group_request();
+
+        /// 取出一个已经接收到的数据组接收响应。
+        std::optional<fragment_group_response_t>
+            fecth_one_group_response();
+
+        enum class from_map_enum :int 
+        {
+            WAITING_MAP,
+            COMPLETED_MAP,
+        };
+
+        /// 从等待表或完成表查找一个数据组，返回组的引用。
+        fragment_group_t * find_group_reference(uint64_t gid, 
+            from_map_enum from_map);
+
+        /// 等待表的当前大小
+        size_t wait_count() const;
+
+        /// 完成表的当前大小
+        size_t completed_count() const;
+
+        /// 请求表的当前大小
+        size_t request_count() const ;
+
+        /// 响应表的当前大小
+        size_t response_count() const ;
+
+        /// 临时缓冲区的数据大小
+        size_t tmp_buffer_size() const;
+
+        /// 清除临时缓冲区的数据
+        void clear_tmp_buffer();
+
+
+    private :
+
+        /// 接收到的数据组发送请求。
+        std::map<uint64_t, fragment_group_request_t> pending_request;
+
+        /// 接收到的数据组接收响应
+        std::map<uint64_t , fragment_group_response_t> pending_response;
+
+        /// 等待表，
+        /// 表中记录了已经决定要接收的组，并正在等待接收的组。
+        std::map<uint64_t, fragment_group_t> wait_groups;
+
+        /// 完成表，
+        /// 表中记录了已经完成数组传输的组。
+        std::map<uint64_t, fragment_group_t> completed_groups;
+
+        /// 未解析数据的缓冲区。
+        andren::base::circular_queue<char> buffer{8192};
     };
 
     
