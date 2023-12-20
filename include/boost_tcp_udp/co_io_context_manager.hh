@@ -5,6 +5,7 @@
 #include <thread>
 #include <atomic>
 #include <utility>
+#include <map>
 
 #ifndef BOOST_ASIO_HAS_CO_AWAIT
 #define BOOST_ASIO_HAS_CO_AWAIT
