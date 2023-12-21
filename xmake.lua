@@ -52,11 +52,11 @@ target("andren-boost_a")
     add_files(src_c_files)
     add_files(src_cc_files)
     add_files(src_cpp_files)
+    add_deps("andren_a")
     add_links("ssl")
     add_links("uuid")
     add_links("boost_context")
-    add_deps("andren_a")
-    add_links("andren_a")
+    add_links("boost_coroutine")
 
 target("andren-boost")
     set_kind("shared")
@@ -69,11 +69,11 @@ target("andren-boost")
     add_files(src_c_files)
     add_files(src_cc_files)
     add_files(src_cpp_files)
+    add_deps("andren")
     add_links("ssl")
     add_links("uuid")
     add_links("boost_context")
-    add_deps("andren")
-    add_links("andren")
+    add_links("boost_coroutine")
 
 
 
@@ -84,39 +84,77 @@ target("andren-boost")
 
 example_src_dir = "./example/"
 
-example_hello_world_src = example_src_dir .. "hello_world.cpp"
+example_test_hello_world_src = example_src_dir .. "test_hello_world.cpp"
 example_test_io_context_manager_src = example_src_dir .. "test_io_context_manager.cpp"
-example_tcp_server_src = example_src_dir .. "tcp_server.cpp"
-example_tcp_client_src = example_src_dir .. "tcp_client.cpp"
+example_test_tcp_server_src = example_src_dir .. "test_tcp_server.cpp"
+example_test_tcp_client_src = example_src_dir .. "test_tcp_client.cpp"
 example_test_udp_src = example_src_dir .. "test_udp.cpp"
 
-target("hello_world")
+example_test_websocket_client_coro_src = example_src_dir .. "test_websocket_client_coro.cpp"
+example_test_websocket_server_coro_src = example_src_dir .. "test_websocket_server_coro.cpp"
+example_test_websocket_office_awaitable_client_src = example_src_dir .. "test_websocket_office_awaitable_client.cpp"
+
+
+example_test_andren_websocket_client_src = example_src_dir .. "test_andren_websocket_client.cpp"
+
+
+target("test_hello_world")
     set_kind("binary")
-    add_files(example_hello_world_src)
+    add_files(example_test_hello_world_src)
     add_deps("andren-boost_a")
 
-target("io_context_manager")
+target("test_io_context_manager")
     set_kind("binary")
     add_files(example_test_io_context_manager_src)
     add_deps("andren-boost_a")
     add_links("boost_context")
 
-
-target("tcp_server")
+target("test_tcp_server")
     set_kind("binary")
-    add_files(example_tcp_server_src)
+    add_files(example_test_tcp_server_src)
     add_deps("andren-boost_a")
     add_links("boost_context")
 
-target("tcp_client")
+target("test_tcp_client")
     set_kind("binary")
-    add_files(example_tcp_client_src)
+    add_files(example_test_tcp_client_src)
     add_deps("andren-boost_a")
     add_links("boost_context")
 
 target("test_udp")
     set_kind("binary")
     add_files(example_test_udp_src)
+    add_deps("andren-boost_a")
+    add_links("boost_context")
+
+
+target("test_websocket_client_coro")
+    set_kind("binary")
+    add_files(example_test_websocket_client_coro_src)
+    add_links("pthread")
+    add_deps("andren-boost_a")
+    add_links("boost_context")
+
+    
+target("test_websocket_server_coro")
+    set_kind("binary")
+    add_files(example_test_websocket_server_coro_src)
+    add_links("pthread")
+    add_deps("andren-boost_a")
+    add_links("boost_context")
+
+target("test_websocket_office_awaitable_client")
+    set_kind("binary")
+    add_files(example_test_websocket_office_awaitable_client_src)
+    add_links("pthread")
+    add_deps("andren-boost_a")
+    add_links("boost_context")
+    
+
+target("test_andren_websocket_client")
+    set_kind("binary")
+    add_files(example_test_andren_websocket_client_src)
+    add_links("pthread")
     add_deps("andren-boost_a")
     add_links("boost_context")
 
