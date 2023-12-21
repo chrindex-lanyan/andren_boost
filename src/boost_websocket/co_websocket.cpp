@@ -21,9 +21,14 @@ namespace  chrindex::andren_boost
     {
         m_websocket = std::move(_ano.m_websocket);
     }
-    co_websocket::co_websocket(ip::tcp::socket && s) noexcept
+    co_websocket::co_websocket(base_stream && s) noexcept
     {
         m_websocket = std::make_unique<websocket_type>(std::move(s));
+    }
+    co_websocket::co_websocket(co_sockstream && s) noexcept
+    {
+        m_websocket = std::make_unique<websocket_type>
+            (std::move(s.reference_base_socket()));
     }
     co_websocket::~co_websocket(){}
 

@@ -1,5 +1,6 @@
 ﻿#pragma once
 
+#include "co_sockstream.hh"
 #include <thread>
 #include <chrono>
 #include <memory>
@@ -54,11 +55,15 @@ namespace chrindex::andren_boost
     {
     public :
 
-        using websocket_type = websocket::stream<ip::tcp::socket>;
+        using base_stream = typename tcp_stream::rebind_executor<
+            typename use_awaitable_t<>::executor_with_default<any_io_executor>>::other;
+        //using base_stream = ip::tcp::socket;
+        using websocket_type = websocket::stream<base_stream>;
 
         co_websocket();
         co_websocket(co_websocket && _ano) noexcept;
-        explicit co_websocket(ip::tcp::socket && s) noexcept;
+        explicit co_websocket(base_stream && s) noexcept;
+        explicit co_websocket(co_sockstream && s) noexcept;
         ~co_websocket();
         void operator=(co_websocket && _ano) noexcept;
 
