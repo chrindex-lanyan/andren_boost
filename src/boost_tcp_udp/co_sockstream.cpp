@@ -1,5 +1,4 @@
 #include "co_sockstream.hh"
-#include "co_websocket.hh"
 
 #include <algorithm>
 #include <exception>
@@ -18,12 +17,14 @@ namespace chrindex::andren_boost
 
     co_sockstream::co_sockstream():sock(_default_io_ctx,{}){}
 
-    co_sockstream::co_sockstream(ip::tcp::socket && s) : sock(std::move(s)){ sock.set_option(ip::tcp::socket::reuse_address()); }
+    co_sockstream::co_sockstream(base_sock_type && s) 
+        : sock(std::move(s)){ sock.set_option(base_sock_type::reuse_address()); }
 
-    co_sockstream::co_sockstream(io_context &ioctx):sock(ioctx) { sock.set_option(ip::tcp::socket::reuse_address()); }
-
-    co_sockstream::co_sockstream(io_context &ioctx, std::string const & ip, uint16_t port) 
-        : sock(ioctx,{ip::address::from_string(ip),port}){ sock.set_option(ip::tcp::socket::reuse_address()); }
+    co_sockstream::co_sockstream(
+            executor_type & executor, 
+        std::string const & ip, uint16_t port) 
+        : sock(executor,{ip::address::from_string(ip),port})
+        { sock.set_option(base_sock_type::reuse_address()); }
 
     co_sockstream::co_sockstream(co_sockstream && ss) noexcept :sock(std::move(ss.sock)) {}
 
@@ -37,6 +38,21 @@ namespace chrindex::andren_boost
         try 
         {
             co_await sock.async_connect(ep,use_awaitable);
+        }
+        catch(std::exception &e)
+        {
+            co_return -1;
+        }
+        co_return 0;
+    }
+
+    awaitable<int> 
+    co_sockstream::async_connect (
+        ip::basic_resolver_results<ip::tcp> const &resolver_result)
+    {
+        try 
+        {
+            co_await sock.async_connect(resolver_result->endpoint(),use_awaitable);
         }
         catch(std::exception &e)
         {
@@ -100,9 +116,9 @@ namespace chrindex::andren_boost
         return sock.local_endpoint();
     }
 
-    co_websocket co_sockstream::cover_as_websocket()
+    co_sockstream::base_sock_type & co_sockstream::reference_base_socket()
     {
-        return co_websocket(std::move(sock));
+        return sock;
     }
 
 }

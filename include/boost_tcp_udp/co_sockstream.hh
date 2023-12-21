@@ -1,6 +1,7 @@
 #pragma once
 
 
+
 #include <sys/socket.h>
 #include <future>
 #include <tuple>
@@ -20,8 +21,7 @@
 #include <boost/asio/co_spawn.hpp>
 #include <boost/asio/detached.hpp>
 #include <boost/asio/io_context.hpp>
-
-#include "co_websocket.hh"
+#include <boost/asio/any_io_executor.hpp>
 
 namespace chrindex::andren_boost
 {
@@ -30,13 +30,15 @@ namespace chrindex::andren_boost
     class co_sockstream 
     {
     public :
+
+        using base_sock_type = ip::tcp::socket ;
+        using executor_type = any_io_executor;
+
         co_sockstream();
 
-        co_sockstream(ip::tcp::socket && s) ;
+        co_sockstream(base_sock_type && s) ;
 
-        co_sockstream(io_context &ioctx) ;
-
-        co_sockstream(io_context &ioctx, std::string const & ip, uint16_t port ) ;
+        co_sockstream(executor_type & executor, std::string const & ip, uint16_t port ) ;
 
         co_sockstream(co_sockstream const &) = delete;
 
@@ -48,6 +50,9 @@ namespace chrindex::andren_boost
 
         awaitable<int> async_connect(std::string const & ip, int port);
 
+        awaitable<int> async_connect(
+            ip::basic_resolver_results<ip::tcp>const & resolver_result);
+
         awaitable<std::tuple<int64_t,std::string>> async_read (uint64_t bufsize_max = 1024);
 
         awaitable<int64_t> async_write(std::string & buffer);
@@ -56,10 +61,11 @@ namespace chrindex::andren_boost
 
         ip::tcp::endpoint self_endpoint() const;
 
-        co_websocket cover_as_websocket();
+
+        base_sock_type & reference_base_socket();
 
     private :
-        ip::tcp::socket sock;
+        base_sock_type sock;
     };
 
 
