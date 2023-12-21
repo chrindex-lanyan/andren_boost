@@ -48,6 +48,8 @@ namespace chrindex::andren_boost
 
         void operator = (co_sockstream && ss) ;
 
+        bool set_reuse_address();
+
         awaitable<int> async_connect(std::string const & ip, int port);
 
         awaitable<int> async_connect(

@@ -18,19 +18,30 @@ namespace chrindex::andren_boost
     co_sockstream::co_sockstream():sock(_default_io_ctx,{}){}
 
     co_sockstream::co_sockstream(base_sock_type && s) 
-        : sock(std::move(s)){ sock.set_option(base_sock_type::reuse_address()); }
+        : sock(std::move(s)){  }
 
     co_sockstream::co_sockstream(
             executor_type & executor, 
         std::string const & ip, uint16_t port) 
         : sock(executor,{ip::address::from_string(ip),port})
-        { sock.set_option(base_sock_type::reuse_address()); }
+        {  }
 
     co_sockstream::co_sockstream(co_sockstream && ss) noexcept :sock(std::move(ss.sock)) {}
 
     co_sockstream::~co_sockstream(){}
 
     void co_sockstream::operator = (co_sockstream && ss) { sock = std::move(ss.sock); }
+
+    bool co_sockstream::set_reuse_address()
+    {
+        try {
+            sock.set_option(base_sock_type::reuse_address());
+        }
+        catch (std::exception e){
+            return false;
+        }
+        return true;
+    }
 
     awaitable<int> co_sockstream::async_connect(std::string const & ip, int port)
     {
