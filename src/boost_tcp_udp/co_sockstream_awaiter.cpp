@@ -9,9 +9,10 @@ namespace chrindex::andren_boost
 {
     using namespace boost::asio;
 
-    co_sockstream_awaiter::co_sockstream_awaiter(io_context::executor_type & executor, std::string const & ip, int port)
+    co_sockstream_awaiter::co_sockstream_awaiter(executor_type & executor, std::string const & ip, int port)
         : acceptor(executor , ip::tcp::endpoint(ip::address::from_string(ip), port))
     {
+        acceptor.set_option(ip::tcp::socket::reuse_address());
         acceptor.listen(boost::asio::socket_base::max_listen_connections);
     }
 

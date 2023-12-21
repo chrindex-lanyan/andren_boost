@@ -2,6 +2,7 @@
 
 #include "co_io_context_manager.hh"
 #include "co_sockstream.hh"
+#include <boost/asio/any_io_executor.hpp>
 
 
 #ifndef BOOST_ASIO_HAS_CO_AWAIT
@@ -26,7 +27,10 @@ namespace chrindex::andren_boost
     class co_sockstream_awaiter
     {
     public :
-        co_sockstream_awaiter(io_context::executor_type & executor, std::string const & ip, int port);
+
+        using executor_type = any_io_executor;
+
+        co_sockstream_awaiter(executor_type & executor, std::string const & ip, int port);
 
         ~co_sockstream_awaiter();
 
