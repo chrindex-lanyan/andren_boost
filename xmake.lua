@@ -93,7 +93,7 @@ example_test_udp_src = example_src_dir .. "test_udp.cpp"
 example_test_websocket_client_coro_src = example_src_dir .. "test_websocket_client_coro.cpp"
 example_test_websocket_server_coro_src = example_src_dir .. "test_websocket_server_coro.cpp"
 example_test_websocket_office_awaitable_client_src = example_src_dir .. "test_websocket_office_awaitable_client.cpp"
-
+example_test_websocket_office_awaitable_server_src = example_src_dir .. "test_websocket_office_awaitable_server.cpp"
 
 example_test_andren_websocket_client_src = example_src_dir .. "test_andren_websocket_client.cpp"
 
@@ -146,6 +146,13 @@ target("test_websocket_server_coro")
 target("test_websocket_office_awaitable_client")
     set_kind("binary")
     add_files(example_test_websocket_office_awaitable_client_src)
+    add_links("pthread")
+    add_deps("andren-boost_a")
+    add_links("boost_context")
+
+target("test_websocket_office_awaitable_server")
+    set_kind("binary")
+    add_files(example_test_websocket_office_awaitable_server_src)
     add_links("pthread")
     add_deps("andren-boost_a")
     add_links("boost_context")
