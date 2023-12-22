@@ -9,6 +9,7 @@
 #include <boost/beast/core/error.hpp>
 #include <boost/beast/http/field.hpp>
 #include <boost/beast/http/fields.hpp>
+#include <exception>
 #include <future>
 
 
@@ -37,12 +38,12 @@ namespace  chrindex::andren_boost
         m_websocket = std::move(_ano.m_websocket);
     }
 
-    bool co_websocket::is_empty() const 
+    bool co_websocket::is_empty() const  noexcept
     {
         return m_websocket == nullptr;
     }
 
-    void co_websocket::set_data_type(websocket_data_type_t type)
+    void co_websocket::set_data_type(websocket_data_type_t type)  noexcept
     {
         if (is_empty() || type == websocket_data_type_t::NONE)[[unlikely]]
         {
@@ -51,23 +52,31 @@ namespace  chrindex::andren_boost
         websocket().text(type == websocket_data_type_t::TEXT);
     }
 
-    void co_websocket::set_websocket_type(websocket_type_t type)
+    bool co_websocket::set_websocket_type(websocket_type_t type)  noexcept
     {
-        if (type == websocket_type_t::CLIENT)
+        try 
         {
-            websocket().set_option(
-            websocket::stream_base::timeout::suggested(
-            role_type::client));
+            if (type == websocket_type_t::CLIENT)
+            {
+                websocket().set_option(
+                websocket::stream_base::timeout::suggested(
+                role_type::client));
+            }
+            else 
+            {
+                websocket().set_option(
+                websocket::stream_base::timeout::suggested(
+                role_type::server));
+            }
         }
-        else 
+        catch (std::exception e)
         {
-            websocket().set_option(
-            websocket::stream_base::timeout::suggested(
-            role_type::server));
+            return false;
         }
+        return true;
     }
 
-    void co_websocket::set_handshake_message(websocket_type_t type, std::string_view _msg)
+    bool co_websocket::set_handshake_message(websocket_type_t type, std::string_view _msg) noexcept
     {
         std::string msg ( _msg.data() , _msg.size() );
         http::field name = http::field::server;
@@ -80,16 +89,25 @@ namespace  chrindex::andren_boost
         {
             name = http::field::user_agent;
         }
-        websocket().set_option(websocket::stream_base::decorator(
+
+        try 
+        {
+            websocket().set_option(websocket::stream_base::decorator(
             [msg = std::move(msg), name]
             (websocket::response_type& res)
+            {
+                res.set(name,
+                    msg);
+            }));
+        }
+        catch (std::exception e)
         {
-            res.set(name,
-                msg);
-        }));
+            return false;
+        }
+        return true;
     }
 
-    bool co_websocket::set_other_option(std::function<void (websocket_type * ws_ptr)> cb)
+    bool co_websocket::set_other_option(std::function<void (websocket_type * ws_ptr)> cb) noexcept
     {
         if (!cb)
         {
@@ -100,11 +118,18 @@ namespace  chrindex::andren_boost
             cb(nullptr);
         }
         websocket_type & w = websocket();
-        cb(&w);
+        try 
+        {
+            cb(&w);
+        }
+        catch (std::exception e)
+        {
+            return false;
+        }
         return true;
     }
 
-    websocket_data_type_t co_websocket::get_data_type()const
+    websocket_data_type_t co_websocket::get_data_type() const noexcept
     {
         if (is_empty())[[unlikely]]
         {
@@ -118,22 +143,37 @@ namespace  chrindex::andren_boost
     }
 
     awaitable<bool> co_websocket::handshake_with_server
-        (std::string host, std::string target)
+        (std::string host, std::string target) noexcept
     {
         if (is_empty())
         {
             co_return false;
         }
-        co_await websocket().async_handshake(host, target,use_awaitable);
+        try 
+        {
+            co_await websocket().async_handshake(host, target,use_awaitable);
+        }
+        catch (std::exception e)
+        {
+            co_return false;
+        }
         co_return true;
     }
 
     awaitable<std::tuple<int64_t, std::string>> 
-        co_websocket::try_recv() 
+        co_websocket::try_recv() noexcept
     {
         flat_buffer buffer_;
-        int64_t nread = co_await websocket().async_read(buffer_, use_awaitable);
-
+        int64_t nread = 0 ; 
+        try 
+        {
+            nread = co_await websocket().async_read(buffer_, use_awaitable);
+        }
+        catch (std::exception e)
+        {
+            co_return std::tuple<int64_t , std::string>
+            { nread , {}};
+        }
         if (nread > 0)[[likely]]
         {
             co_return std::tuple<int64_t , std::string>{ 
@@ -145,17 +185,33 @@ namespace  chrindex::andren_boost
             { nread , {}};
     }
 
-    awaitable<int64_t> co_websocket::try_send(std::string && data)
+    awaitable<int64_t> co_websocket::try_send(std::string && data) noexcept
     {
-        int64_t nbytes = co_await websocket()
+        int64_t nbytes = 0;
+        try 
+        {
+            nbytes = co_await websocket()
             .async_write(buffer(std::move(data)), 
             use_awaitable);
+        }
+        catch(std::exception e)
+        {
+            nbytes = -1;
+        }
         co_return nbytes;
     } 
 
-    awaitable<int64_t> co_websocket::try_send(std::string const & data)
+    awaitable<int64_t> co_websocket::try_send(std::string const & data) noexcept
     {
-        co_return co_await try_send(std::string(data));
+        int64_t nwrite = 0;
+        try {
+            nwrite = co_await try_send(std::string(data));
+        }
+        catch (std::exception )
+        {
+            co_return -1;
+        }
+        co_return nwrite;
     }
 
     co_websocket::websocket_type & co_websocket::websocket() 

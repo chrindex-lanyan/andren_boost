@@ -70,26 +70,26 @@ namespace chrindex::andren_boost
         co_websocket(co_websocket const &) = delete;
         void operator=(co_websocket const &) = delete;
         
-        bool is_empty() const ;
+        bool is_empty() const noexcept;
 
-        void set_data_type(websocket_data_type_t type);
+        void set_data_type(websocket_data_type_t type) noexcept;
 
-        websocket_data_type_t get_data_type() const;
+        websocket_data_type_t get_data_type() const noexcept;
 
-        void set_websocket_type(websocket_type_t type);
+        bool set_websocket_type(websocket_type_t type) noexcept;
 
-        void set_handshake_message(websocket_type_t type, std::string_view msg);
+        bool set_handshake_message(websocket_type_t type, std::string_view msg) noexcept;
 
-        bool set_other_option(std::function<void (websocket_type * ws_ptr)> cb);
+        bool set_other_option(std::function<void (websocket_type * ws_ptr)> cb)  noexcept;
 
-        awaitable<bool> handshake_with_server(std::string host, std::string target);
+        awaitable<bool> handshake_with_server(std::string host, std::string target)  noexcept;
 
         awaitable<std::tuple<int64_t, std::string>> 
-            try_recv() ;
+            try_recv()  noexcept;
 
-        awaitable<int64_t> try_send(std::string const & data);
+        awaitable<int64_t> try_send(std::string const & data) noexcept;
 
-        awaitable<int64_t> try_send(std::string &&data);
+        awaitable<int64_t> try_send(std::string &&data) noexcept;
 
     private :
 

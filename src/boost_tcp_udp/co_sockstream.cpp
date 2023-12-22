@@ -30,9 +30,9 @@ namespace chrindex::andren_boost
 
     co_sockstream::~co_sockstream(){}
 
-    void co_sockstream::operator = (co_sockstream && ss) { sock = std::move(ss.sock); }
+    void co_sockstream::operator = (co_sockstream && ss) noexcept { sock = std::move(ss.sock); }
 
-    bool co_sockstream::set_reuse_address()
+    bool co_sockstream::set_reuse_address() noexcept
     {
         try {
             sock.set_option(base_sock_type::reuse_address());
@@ -43,7 +43,7 @@ namespace chrindex::andren_boost
         return true;
     }
 
-    awaitable<int> co_sockstream::async_connect(std::string const & ip, int port)
+    awaitable<int> co_sockstream::async_connect(std::string const & ip, int port) noexcept
     {
         ip::tcp::endpoint ep (ip::address::from_string(ip),port);
         try 
@@ -58,8 +58,8 @@ namespace chrindex::andren_boost
     }
 
     awaitable<int> 
-    co_sockstream::async_connect (
-        ip::basic_resolver_results<ip::tcp> const &resolver_result)
+        co_sockstream::async_connect (
+            ip::basic_resolver_results<ip::tcp> const &resolver_result) noexcept
     {
         try 
         {
@@ -72,7 +72,8 @@ namespace chrindex::andren_boost
         co_return 0;
     }
 
-    awaitable<std::tuple<int64_t,std::string>> co_sockstream::async_read (uint64_t bufsize_max)
+    awaitable<std::tuple<int64_t,std::string>> 
+        co_sockstream::async_read (uint64_t bufsize_max) noexcept
     {
         bufsize_max = std::max(16ul, bufsize_max);
 
@@ -101,7 +102,7 @@ namespace chrindex::andren_boost
         co_return std::tuple<int64_t, std::string>{-1,{}};
     }
 
-    awaitable<int64_t> co_sockstream::async_write(std::string & buffer)
+    awaitable<int64_t> co_sockstream::async_write(std::string & buffer) noexcept
     {
         int nwrite = 0;
         try
@@ -117,17 +118,37 @@ namespace chrindex::andren_boost
         co_return nwrite;
     }
 
-    ip::tcp::endpoint co_sockstream::peer_endpoint() const
+    std::optional<ip::tcp::endpoint> 
+        co_sockstream::peer_endpoint() const noexcept
     {
-        return sock.remote_endpoint();
+        ip::tcp::endpoint ep; 
+        try {
+            ep = sock.remote_endpoint();
+        }
+        catch (std::exception e)
+        {
+            return {};
+        }
+        return ep;
     }
 
-    ip::tcp::endpoint co_sockstream::self_endpoint() const
+    std::optional<ip::tcp::endpoint> 
+        co_sockstream::self_endpoint() const noexcept
     {
-        return sock.local_endpoint();
+        ip::tcp::endpoint ep;
+        try 
+        {
+            ep = sock.local_endpoint();
+        }
+        catch (std::exception e)
+        {
+            return {};
+        }
+        return ep;
     }
 
-    co_sockstream::base_sock_type & co_sockstream::reference_base_socket()
+    co_sockstream::base_sock_type & 
+        co_sockstream::reference_base_socket() noexcept
     {
         return sock;
     }

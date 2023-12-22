@@ -31,8 +31,8 @@ awaitable<void> tcp_accept_link() {
   while (1) {
     andren_boost::co_sockstream sock = co_await accept.async_accept();
     fprintf(stdout, "new connection [%s:%d].\n",
-            sock.peer_endpoint().address().to_string().c_str(),
-            sock.peer_endpoint().port());
+            sock.peer_endpoint().value().address().to_string().c_str(),
+            sock.peer_endpoint().value().port());
 
     executor = co_await this_coro::executor;
     co_spawn(executor, echo_server(std::move(sock)),

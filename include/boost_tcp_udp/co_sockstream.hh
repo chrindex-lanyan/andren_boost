@@ -6,6 +6,7 @@
 #include <future>
 #include <tuple>
 #include <exception>
+#include <optional>
 
 #ifndef BOOST_ASIO_HAS_CO_AWAIT
 #define BOOST_ASIO_HAS_CO_AWAIT
@@ -46,25 +47,24 @@ namespace chrindex::andren_boost
 
         ~co_sockstream();
 
-        void operator = (co_sockstream && ss) ;
+        void operator = (co_sockstream && ss) noexcept;
 
-        bool set_reuse_address();
+        bool set_reuse_address() noexcept;
 
-        awaitable<int> async_connect(std::string const & ip, int port);
+        awaitable<int> async_connect(std::string const & ip, int port) noexcept;
 
         awaitable<int> async_connect(
-            ip::basic_resolver_results<ip::tcp>const & resolver_result);
+            ip::basic_resolver_results<ip::tcp>const & resolver_result) noexcept;
 
-        awaitable<std::tuple<int64_t,std::string>> async_read (uint64_t bufsize_max = 1024);
+        awaitable<std::tuple<int64_t,std::string>> async_read (uint64_t bufsize_max = 1024) noexcept;
 
-        awaitable<int64_t> async_write(std::string & buffer);
+        awaitable<int64_t> async_write(std::string & buffer) noexcept;
 
-        ip::tcp::endpoint peer_endpoint() const;
+        std::optional<ip::tcp::endpoint> peer_endpoint() const noexcept;
 
-        ip::tcp::endpoint self_endpoint() const;
+        std::optional<ip::tcp::endpoint> self_endpoint() const noexcept;
 
-
-        base_sock_type & reference_base_socket();
+        base_sock_type & reference_base_socket() noexcept;
 
     private :
         base_sock_type sock;
