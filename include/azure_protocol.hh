@@ -10,6 +10,7 @@
 #include <functional>
 #include <map>
 #include <optional>
+#include <vector>
 
 
 #include "circleque.hpp"
@@ -111,6 +112,7 @@ namespace chrindex::andren_boost
     #define DEFAULT_PRIORITY_CAPACITY 256
 
     // 数据碎片
+    // 这个结构体的内存布局是平凡的
     struct fragment_t 
     {
         struct _head_t
@@ -131,7 +133,16 @@ namespace chrindex::andren_boost
         fragment_t() = default;
         ~fragment_t() = default;
 
+        bool operator>(fragment_t const & _) const noexcept;
+
+        bool operator==(fragment_t const &_) const noexcept;
+
+        bool operator<(fragment_t const &_) const noexcept;
+
+        bool operator!=(fragment_t const &_) const noexcept;
+
         /// 除数据字段以外，fragment头部字段所需大小
+        /// 该大小 = sizeof(_head_t)
         static size_t fragment_head_size();
 
         /// 提供必要数据，并将mutable_buffer的数据
@@ -153,11 +164,11 @@ namespace chrindex::andren_boost
 
 
     // 碎片组及碎片组生产者
+    // 这个结构体的内存布局是平凡的
     struct fragment_group_t
     {
         using fragment_buffer_t = std::string;
 
-        uint64_t magic_number = 0x0a1b2c3e4f5e6c7b ; 
         uint64_t gid; // Group ID 
         uint32_t priority; // 优先级
 
@@ -175,26 +186,24 @@ namespace chrindex::andren_boost
 
         ~fragment_group_t()=default;
 
-        bool operator>(fragment_group_t const & _ano)const 
-        {
-            return priority > _ano.priority;
-        }
+        fragment_group_t(fragment_group_t && _) noexcept;
 
-        bool operator<(fragment_group_t const & _ano)const 
-        {
-            return priority<_ano.priority;
-        }
+        void operator=(fragment_group_t && _) noexcept;
 
-        bool operator==(fragment_group_t const & _ano)const 
-        {
-            return priority == _ano.priority;
-        }
+        bool operator>(fragment_group_t const & _ano)const noexcept;
+
+        bool operator<(fragment_group_t const & _ano)const noexcept;
+
+        bool operator==(fragment_group_t const & _ano)const noexcept;
+
+        bool operator!=(fragment_group_t const & _ano)const noexcept;
 
         /// 初始化一个新的fragment_group
         bool init_a_new_group(
             uint64_t group_id,
             uint32_t group_priority,
-            uint32_t single_fragment_data_maxium_size
+            uint32_t single_fragment_data_maxium_size,
+            std::string const & data
         );
 
         /// 获取全部fragment_t的引用的数组。
@@ -206,6 +215,7 @@ namespace chrindex::andren_boost
     };
 
     // 碎片组传输请求
+    // 这个结构体的内存布局是平凡的
     struct fragment_group_request_t
     {
         // 固定的协议头。
@@ -223,6 +233,7 @@ namespace chrindex::andren_boost
         fragment_group_request_t () = default;
         ~ fragment_group_request_t () = default;
 
+        // 创建具有fragment_group_request_t布局的std::string.
         std::string create_request() const;
     };
 
@@ -238,6 +249,7 @@ namespace chrindex::andren_boost
     };
 
     // 碎片组传输请求的响应
+    // 这个结构体的内存布局是平凡的
     struct fragment_group_response_t
     {
         // 固定的协议头。
@@ -261,27 +273,31 @@ namespace chrindex::andren_boost
         // 拓展码。供用户自由使用。
         int32_t extention_code = 0;
 
-        fragment_group_response_t (){}
+        fragment_group_response_t () = default;
 
-        ~fragment_group_response_t(){}
+        ~fragment_group_response_t() = default;
 
-        std::string create_request(uint64_t your_gid) const;
+        // 创建具有fragment_group_response_t布局的std::string.
+        std::string create_request() const;
     };
 
     // 碎片组发送器
+    // 这个结构体的内存布局不是平凡的
     struct fragment_group_sender_t
     {
         fragment_group_sender_t() = default;
         ~fragment_group_sender_t () = default;
 
         /// 添加一个已经创建好的组，加入未决表，
-        /// 返回一个初始化好的组发送请求。
+        /// 返回一个初始化好的组发送请求,
         /// 用户可以更改其中的extention_code字段。
+        /// 重复创建将返回空。
         std::optional<fragment_group_request_t> 
             append_group(fragment_group_t && group);
 
         /// 提供一个响应，该响应将决定是否将该组从未决表和等待表，
-        /// 如果未在未决表中查询到指定的组，则返回false。
+        /// 如果未在未决表中查询到指定的组，或response指示拒绝，
+        /// 则返回false。
         bool notify_a_group(fragment_group_response_t & response);
 
         enum class from_map_enum :int 
@@ -307,6 +323,15 @@ namespace chrindex::andren_boost
         /// 返回的是本次分配的数量。
         size_t flush();
 
+    private:
+    
+        using _ready_data_t = std::tuple<uint32_t, 
+            fragment_group_t::fragment_buffer_t>;
+
+        static bool compare_fragment_larger(
+            _ready_data_t const& left , 
+            _ready_data_t const& right);
+
     private :
 
         /// 未决表，
@@ -319,15 +344,20 @@ namespace chrindex::andren_boost
 
         /// 就绪表，
         /// 准备下一轮被发送的片段。
-        std::priority_queue<fragment_t *> m_readyque;
+        using ready_queue_t = std::priority_queue<
+                _ready_data_t, std::vector<_ready_data_t>, 
+            decltype(&fragment_group_sender_t::compare_fragment_larger)>;
+        
+        ready_queue_t m_readyque;
     };
 
     // 碎片组接收器
+    // 这个结构体的内存布局不是平凡的
     struct fragment_group_receiver_t
     {
-        fragment_group_receiver_t(){}
+        fragment_group_receiver_t() = default;
 
-        ~fragment_group_receiver_t(){}
+        ~fragment_group_receiver_t() = default;
         
         /// 添加一些数据，
         /// 数组会在此被解开成一个或多个fragment、request、response。
