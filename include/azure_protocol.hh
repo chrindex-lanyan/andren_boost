@@ -13,12 +13,19 @@
 #include <vector>
 
 
-#include "circleque.hpp"
-
 
 /*
 
 协议设计
+    约定：
+        我们假设上层协议做出如下保证：
+            1. 上层协议存在可用的分包机制；
+            2. 上层协议的数据收发是事务性的；
+            3. 上层协议的数据收发是有序的。
+        分包机制：协议保证包传输的完整性。
+        事务性：数据的收发要么不发生，要么全部完成。
+    该协议被设计为在websocket上工作良好。
+
     数据包分组、拆分和组装：
 
     将大于N字节的数据包拆分成一组fragment。
@@ -105,10 +112,21 @@
 
 namespace chrindex::andren_boost
 {
-
+    /// fragment的魔术字
     #define DEFAULT_FRAGMENT_MAGIC_NUM_64 0x0a1b2c3e4f5e6c7b
+
+    /// request的魔术字
     #define DEFAULT_REQUEST_MAGIC_NUM_64 0x9a8b7c6e5f4e3c2b
+
+    /// response的魔术字
     #define DEFAULT_RESPONSE_MAGIC_NUM_64 0x5a6b9c3e7f2e1c0b
+
+    /// 默认的就绪队列最大大小。
+    /// 该队列决定了一次发送fragment的数量上限，
+    /// 为了不让连接复用功能出现退化，同时建立的组
+    /// 的数量尽量不要超过这个数值。
+    /// 否则会出现优先级低的组始终无法进行数据传送，
+    /// 因为他们总是在进入就绪队列前，队列就满了。
     #define DEFAULT_PRIORITY_CAPACITY 256
 
     // 数据碎片
@@ -182,7 +200,7 @@ namespace chrindex::andren_boost
         // 已打包好的fragment结构（以buffer呈现）
         std::deque<fragment_buffer_t> all_fragment_buffer;
 
-        fragment_group_t()= default;
+        fragment_group_t()=default;
 
         ~fragment_group_t()=default;
 
@@ -253,7 +271,6 @@ namespace chrindex::andren_boost
     struct fragment_group_response_t
     {
         // 固定的协议头。
-        // 默认情况是： 0x0A1B2C3E4F5E6C7B , 共8字节。
         uint64_t magic_number = DEFAULT_RESPONSE_MAGIC_NUM_64 ; 
 
         // 控制字段相关的组ID、回应状态或错误的组ID。
@@ -295,9 +312,9 @@ namespace chrindex::andren_boost
         std::optional<fragment_group_request_t> 
             append_group(fragment_group_t && group);
 
-        /// 提供一个响应，该响应将决定是否将该组从未决表和等待表，
+        /// 提供一个响应，该响应将决定是否将该组从未决表移到等待表，
         /// 如果未在未决表中查询到指定的组，或response指示拒绝，
-        /// 则返回false。
+        /// 则返回false，否则返回true，并移动组到等待表。
         bool notify_a_group(fragment_group_response_t & response);
 
         enum class from_map_enum :int 
@@ -328,6 +345,7 @@ namespace chrindex::andren_boost
         using _ready_data_t = std::tuple<uint32_t, 
             fragment_group_t::fragment_buffer_t>;
 
+        /// 根据组之间的优先级决定发送fragment的次序
         static bool compare_fragment_larger(
             _ready_data_t const& left , 
             _ready_data_t const& right);
@@ -360,7 +378,9 @@ namespace chrindex::andren_boost
         ~fragment_group_receiver_t() = default;
         
         /// 添加一些数据，
-        /// 数组会在此被解开成一个或多个fragment、request、response。
+        /// 数组会在此被解开成一个或多个package，可以是：
+        /// fragment、request或response。
+        /// 返回值指示解析出来的package数量，错误则返回-1。
         size_t append_some_data(std::string && data);
 
         /// 取出一个已经完成接收的数据组。
@@ -374,6 +394,14 @@ namespace chrindex::andren_boost
         /// 取出一个已经接收到的数据组接收响应。
         std::optional<fragment_group_response_t>
             fecth_one_group_response();
+
+        /// 尝试接受一组数据的传输,
+        /// 这个操作将创建组到等待表中。
+        /// 已存在或者错误，都会返回false。
+        /// 如果你收到了组传送请求，并回应对端同意接受组，
+        /// 请立即将请求传递到此函数，让其准备接收组。
+        bool try_collect_fragments(
+                fragment_group_request_t const & request);
 
         enum class from_map_enum :int 
         {
@@ -403,6 +431,16 @@ namespace chrindex::andren_boost
         /// 清除临时缓冲区的数据
         void clear_tmp_buffer();
 
+    private :
+
+        std::tuple<int, std::string_view> 
+            parse_as_request(std::string_view slice);
+
+        std::tuple<int, std::string_view> 
+            parse_as_response(std::string_view slice);
+
+        std::tuple<int, std::string_view> 
+            parse_as_fragment(std::string_view slice);
 
     private :
 
@@ -421,7 +459,7 @@ namespace chrindex::andren_boost
         std::map<uint64_t, fragment_group_t> completed_groups;
 
         /// 未解析数据的缓冲区。
-        andren::base::circular_queue<char> buffer{8192};
+        std::string buffer;
     };
 
     

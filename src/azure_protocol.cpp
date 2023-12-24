@@ -1,10 +1,13 @@
 ﻿
 #include "azure_protocol.hh"
 
+#include <cstdint>
 #include <cstdlib>
 #include <cstring>
 
+#include <functional>
 #include <set>
+#include <string_view>
 
 namespace chrindex::andren_boost
 {
@@ -324,29 +327,223 @@ namespace chrindex::andren_boost
     /// 数组会在此被解开成一个或多个fragment、request、response。
     size_t fragment_group_receiver_t::append_some_data(std::string && data)
     {
+        std::string str = std::move(buffer) + std::move(data);
+        uint64_t count = 0;
+
+        if (str.empty())
+        {
+            return 0;
+        }
+        std::string_view slice = str;
+        std::function<std::tuple<int,
+                std::string_view>(std::string_view)> real_func;
+            
+        while (!slice.empty())
+        {
+            uint64_t const* magic_number = 
+                reinterpret_cast<uint64_t const*>(&slice[0]);
+            
+            switch (*magic_number) 
+            {
+                case DEFAULT_REQUEST_MAGIC_NUM_64:
+                {
+                    real_func = [this](std::string_view _slice) 
+                        { return parse_as_request(_slice); };
+                    break;
+                }
+                case DEFAULT_RESPONSE_MAGIC_NUM_64:
+                {
+                    real_func = [this](std::string_view _slice) 
+                        { return parse_as_response(_slice); };
+                    break;
+                }
+                case DEFAULT_FRAGMENT_MAGIC_NUM_64:
+                {
+                    real_func = [this](std::string_view _slice) 
+                        { return parse_as_fragment(_slice); };
+                    break;
+                }
+                default :
+                {
+                    real_func = {};
+                    break;
+                }
+            }
+
+            if (!real_func)
+            {
+                buffer = slice;
+                break;
+            }
+            auto [ret , next_slice] = real_func(slice);
+            if (ret != 0)
+            {
+                buffer = slice;
+                break;
+            }
+            slice = next_slice;
+            count++;
+        }
+        return count ;
+    }
+
+    std::tuple<int, std::string_view> 
+        fragment_group_receiver_t::parse_as_request(std::string_view slice)
+    {
+        fragment_group_request_t const *req = 
+            reinterpret_cast<fragment_group_request_t const*>(&slice[0]); 
         
-        return 0;
+        if(pending_request.end() 
+            != pending_request.find(req->gid))
+        {
+            return {-1,{}};
+        }
+        if (slice.size() < sizeof(fragment_group_request_t))
+        {
+            return {-2,{}};
+        }
+        
+        pending_request.insert({ req->gid, *req});
+        
+        if (slice.size() == sizeof(fragment_group_request_t))
+        {
+            return {0, {}};
+        }
+        return {0, {slice.begin(), slice.begin()
+             + sizeof(fragment_group_request_t)}};
+    }
+
+    std::tuple<int, std::string_view> 
+        fragment_group_receiver_t::parse_as_response(std::string_view slice)
+    {
+        fragment_group_response_t const* response = 
+            reinterpret_cast<fragment_group_response_t const *>
+                (&slice[0]);
+        
+        if (pending_response.end() !=
+            pending_response.find(response->target_gid))
+        {
+            return {-1, {}};
+        }
+        if (slice.size() < sizeof (fragment_group_response_t))
+        {
+            return {-2, {}};
+        }
+
+        pending_response.insert({response->target_gid, 
+            *response});
+        
+        if (slice.size() == sizeof(fragment_group_response_t))
+        {
+            return {0, {}};
+        }
+        return {0, {slice.begin(),slice.begin()
+            + sizeof(fragment_group_response_t)}};
+    }
+
+    std::tuple<int, std::string_view> 
+        fragment_group_receiver_t::parse_as_fragment(std::string_view slice)
+    {
+        fragment_t const* fragment = 
+            reinterpret_cast<fragment_t const *>(&slice[0]);
+        auto iter = wait_groups.find(fragment->head.gid);
+
+        if (wait_groups.end() != iter)
+        {
+            return {-1, {}};
+        }
+
+        if (slice.size() < sizeof (fragment_t))
+        {
+            return {-2, {}};
+        }
+        size_t need_size = fragment_t::fragment_head_size() +
+                fragment->head.data_size;
+
+        if (slice.size() < need_size)
+        {
+            return {-2, {}};
+        }
+        fragment_group_t & group = iter->second;
+        std::string data{ 
+            reinterpret_cast<char const *>
+                (&fragment),
+                need_size
+            };
+        
+        group.all_fragment_buffer.push_back(std::move(data));
+        if (slice.size() == need_size)
+        {               
+            return {0, {}};
+        }
+        return {0, {slice.begin(),slice.begin()
+            + need_size}};
+    }
+
+    bool fragment_group_receiver_t::try_collect_fragments(
+        fragment_group_request_t const & request)
+    {
+        if (wait_groups.end() !=
+            wait_groups.find(request.gid))
+        {
+            return false;
+        }
+        fragment_group_t & group = wait_groups[request.gid];
+
+        group.gid = request.gid;
+        group.priority = UINT32_MAX;
+        group.all_data_size = request.all_data_size;
+        group.fragment_count = request.fragment_count;
+        group.fragment_data_maxium_size = 
+            request.fragment_data_maxium_size;
+        group.all_fragment_buffer ={};
+
+        return true;
     }
 
     /// 取出一个已经完成接收的数据组。
     std::optional<fragment_group_t> 
         fragment_group_receiver_t::fecth_one_completed_group()
     {
-        return {};
+        if (completed_groups.empty())
+        {
+            return {};
+        }
+        auto iter = completed_groups.begin();
+        std::optional<fragment_group_t> result 
+            = std::move(iter->second);
+        completed_groups.erase(iter);
+        return result;
     }
 
     /// 取出一个接收到的数据组发送请求。
     std::optional<fragment_group_request_t> 
         fragment_group_receiver_t::fecth_one_group_request()
     {
-        return {};
+        if (pending_request.empty())
+        {
+            return {};
+        }
+        auto iter = pending_request.begin();
+        std::optional<fragment_group_request_t> result 
+            = std::move(iter->second);
+        pending_request.erase(iter);
+        return result;
     }
 
     /// 取出一个已经接收到的数据组接收响应。
     std::optional<fragment_group_response_t>
         fragment_group_receiver_t::fecth_one_group_response()
     {
-        return {};
+        if (pending_response.empty())
+        {
+            return {};
+        }
+        auto iter = pending_response.begin();
+        std::optional<fragment_group_response_t> 
+            result = std::move(iter->second);
+        pending_response.erase(iter);
+        return result;
     }
 
     /// 从等待表或完成表查找一个数据组，返回组的引用。
@@ -354,43 +551,63 @@ namespace chrindex::andren_boost
         find_group_reference(
             uint64_t gid,  from_map_enum from_map)
     {
-        return nullptr;
+        std::map<uint64_t, fragment_group_t> * p_map = nullptr;
+
+        if (from_map == from_map_enum::COMPLETED_MAP)
+        {
+            p_map = &completed_groups;
+        }
+        else if (from_map == from_map_enum::WAITING_MAP)
+        {
+            p_map = &wait_groups;
+        }
+        else 
+        {
+            return nullptr;
+        }
+        auto iter = p_map->find(gid);
+        if (iter == p_map->end())
+        {
+            return nullptr;
+        }
+        return &iter->second;
     }
            
 
     /// 等待表的当前大小
     size_t fragment_group_receiver_t::wait_count() const
     {
-        return 0;
+        return wait_groups.size();
     }
 
     /// 完成表的当前大小
     size_t fragment_group_receiver_t::completed_count() const
     {
-        return 0;
+        return completed_groups.size();
     }
 
     /// 请求表的当前大小
     size_t fragment_group_receiver_t::request_count() const 
     {
-        return 0;
+        return pending_request.size();
     }
 
     /// 响应表的当前大小
     size_t fragment_group_receiver_t::response_count() const 
     {
-        return 0;
+        return pending_response.size();
     }
 
     /// 临时缓冲区的数据大小
     size_t fragment_group_receiver_t::tmp_buffer_size() const
     {
-        return 0;
+        return buffer.size();
     }
 
     /// 清除临时缓冲区的数据
     void fragment_group_receiver_t::clear_tmp_buffer()
     {
+        buffer.clear();
         return ;
     }
     
