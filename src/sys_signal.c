@@ -1,4 +1,4 @@
-#include "sys_local_ipc.h"
+#include "sys_signal.h"
 #include <signal.h>
 #include <unistd.h>
 
