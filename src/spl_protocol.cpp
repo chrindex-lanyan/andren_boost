@@ -2,6 +2,8 @@
 
 #include <algorithm>
 
+namespace chrindex::andren_boost{
+
 const std::string protocol_head = "REQ SPLP/1.1 \r";
 const std::string service_head = "Service:";
 const std::string request_head = "Request:";
@@ -282,4 +284,6 @@ spl_protocol_t::check_type_enum spl_protocol_t::parser(std::string& data, struct
 	pack.data.insert(pack.data.begin(), data.begin() + crrt_ops, data.begin() + crrt_ops + pack.data_size);
 	ret = crrt_ops + pack.data_size;
 	return et;
+}
+
 }

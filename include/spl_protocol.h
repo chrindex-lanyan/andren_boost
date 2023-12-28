@@ -23,6 +23,7 @@
 ************
 */
 
+namespace chrindex::andren_boost{
 
 extern const std::string protocol_head;
 extern const std::string service_head;
@@ -128,3 +129,5 @@ private:
 
     std::unique_ptr<struct _data_t> m_data;
 };
+
+}
