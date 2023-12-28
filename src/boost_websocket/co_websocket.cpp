@@ -214,6 +214,19 @@ namespace  chrindex::andren_boost
         co_return nwrite;
     }
 
+    awaitable<bool> co_websocket::try_accept_client() noexcept
+    {
+        try 
+        {
+            co_await websocket().async_accept();
+        }
+        catch (std::exception )
+        {
+            co_return false;
+        }
+        co_return true;
+    }
+
     co_websocket::websocket_type & co_websocket::websocket() 
     {
         return *m_websocket;

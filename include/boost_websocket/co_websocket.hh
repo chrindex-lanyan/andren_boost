@@ -91,6 +91,8 @@ namespace chrindex::andren_boost
 
         awaitable<int64_t> try_send(std::string &&data) noexcept;
 
+        awaitable<bool> try_accept_client() noexcept;
+
     private :
 
         websocket_type & websocket() ;
