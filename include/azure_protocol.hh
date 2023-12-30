@@ -229,6 +229,12 @@ namespace chrindex::andren_boost
         /// 的生命周期内有效。
         std::vector<fragment_t const *> 
             all_fragment_reference() const;
+        
+        /// 拼合fragment为数据整体，当且仅当
+        /// fragment_count = all_fragment_buffer.size().
+        /// 接口不检查拼合后的数据的长度是否等于all_data_size。
+        std::optional<std::tuple<bool , std::string>>
+            combine_fragments_as_data() const;
 
     };
 
@@ -250,6 +256,8 @@ namespace chrindex::andren_boost
 
         fragment_group_request_t () = default;
         ~ fragment_group_request_t () = default;
+
+        void init_request(fragment_group_t const & group);
 
         // 创建具有fragment_group_request_t布局的std::string.
         std::string create_request() const;
@@ -315,7 +323,7 @@ namespace chrindex::andren_boost
         /// 提供一个响应，该响应将决定是否将该组从未决表移到等待表，
         /// 如果未在未决表中查询到指定的组，或response指示拒绝，
         /// 则返回false，否则返回true，并移动组到等待表。
-        bool notify_a_group(fragment_group_response_t & response);
+        bool notify_a_group(fragment_group_response_t const& response);
 
         enum class from_map_enum :int 
         {

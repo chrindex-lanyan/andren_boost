@@ -165,6 +165,22 @@ namespace chrindex::andren_boost
         }
         return result;
     }
+
+    std::optional<std::tuple<bool , std::string>>
+        fragment_group_t::combine_fragments_as_data() const
+    {
+        if(fragment_count != all_fragment_buffer.size())
+        {
+            return {{false , {}}};
+        }
+        std::string data ;
+        data.reserve(all_data_size);
+        for (auto & _data : all_fragment_buffer)
+        {
+            data += std::move(_data);
+        }
+        return {{true, std::move(data)}};
+    }
     
     // 碎片组传输请求
     std::string fragment_group_request_t::create_request() const
@@ -173,6 +189,20 @@ namespace chrindex::andren_boost
             reinterpret_cast<char const *>(this), 
             sizeof(fragment_group_request_t) 
         };
+    }
+
+    void fragment_group_request_t::init_request(fragment_group_t const & group)
+    {
+        // magic_number = DEFAULT_REQUEST_MAGIC_NUM_64;
+        gid = group.gid;
+        fragment_count = group.fragment_count;
+        all_data_size = group.all_data_size; 
+
+        // 单个碎片的数据段最大字节数。
+        fragment_data_maxium_size = group.fragment_data_maxium_size; 
+
+        // 扩展用的预留字段，供用户自由使用。
+        //extention_code = 0; 
     }
     
     // 碎片组传输请求的响应
@@ -210,7 +240,7 @@ namespace chrindex::andren_boost
         return result;
     }
 
-    bool fragment_group_sender_t::notify_a_group(fragment_group_response_t & response)
+    bool fragment_group_sender_t::notify_a_group(fragment_group_response_t const& response)
     {
         auto iter = pending_groups.find(response.target_gid);
         if (iter == pending_groups.end())
