@@ -11,6 +11,7 @@ main_include_dir = "./include/"
 main_include_boost_tcp_udp_dir = main_include_dir .. "boost_tcp_udp/"
 main_include_boost_http_dir = main_include_dir .. "boost_http/"
 main_include_boost_websocket_dir = main_include_dir .. "boost_websocket/"
+main_include_virtual_session_dir = main_include_dir .. "virtual_session/"
 
 include_dir_flags = " -I " .. andren_base_include_dir
                     .. " -I " .. andren_extention_include_dir
@@ -18,6 +19,7 @@ include_dir_flags = " -I " .. andren_base_include_dir
                     .. " -I " .. main_include_boost_tcp_udp_dir
                     .. " -I " .. main_include_boost_http_dir 
                     .. " -I " .. main_include_boost_websocket_dir
+                    .. " -I " .. main_include_virtual_session_dir
 
 
 add_cflags("-Wall " .. include_dir_flags )

@@ -1,641 +1,651 @@
 [
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_pgsql_statement/linux/x86_64/debug/third_part/submodule/andren/example/example_pgsql.cpp.o", "third_part/submodule/andren/example/example_pgsql.cpp"],
-  "file": "third_part/submodule/andren/example/example_pgsql.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/pgsql_api.cpp.o", "third_part/submodule/andren/source/base/pgsql_api.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/pgsql_api.cpp.o", "third_part/submodule/andren/source/base/pgsql_api.cpp"],
   "file": "third_part/submodule/andren/source/base/pgsql_api.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/ssl.cpp.o", "third_part/submodule/andren/source/base/ssl.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/ssl.cpp.o", "third_part/submodule/andren/source/base/ssl.cpp"],
   "file": "third_part/submodule/andren/source/base/ssl.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/zlibstream.cpp.o", "third_part/submodule/andren/source/base/zlibstream.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/zlibstream.cpp.o", "third_part/submodule/andren/source/base/zlibstream.cpp"],
   "file": "third_part/submodule/andren/source/base/zlibstream.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/epoll.cpp.o", "third_part/submodule/andren/source/base/epoll.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/epoll.cpp.o", "third_part/submodule/andren/source/base/epoll.cpp"],
   "file": "third_part/submodule/andren/source/base/epoll.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/pipe.cpp.o", "third_part/submodule/andren/source/base/pipe.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/pipe.cpp.o", "third_part/submodule/andren/source/base/pipe.cpp"],
   "file": "third_part/submodule/andren/source/base/pipe.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/uid_creator.cpp.o", "third_part/submodule/andren/source/base/uid_creator.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/uid_creator.cpp.o", "third_part/submodule/andren/source/base/uid_creator.cpp"],
   "file": "third_part/submodule/andren/source/base/uid_creator.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/socket.cpp.o", "third_part/submodule/andren/source/base/socket.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/socket.cpp.o", "third_part/submodule/andren/source/base/socket.cpp"],
   "file": "third_part/submodule/andren/source/base/socket.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/signal.cpp.o", "third_part/submodule/andren/source/base/signal.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/signal.cpp.o", "third_part/submodule/andren/source/base/signal.cpp"],
   "file": "third_part/submodule/andren/source/base/signal.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/end_point.cpp.o", "third_part/submodule/andren/source/base/end_point.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/end_point.cpp.o", "third_part/submodule/andren/source/base/end_point.cpp"],
   "file": "third_part/submodule/andren/source/base/end_point.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/ufile.cpp.o", "third_part/submodule/andren/source/base/ufile.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/ufile.cpp.o", "third_part/submodule/andren/source/base/ufile.cpp"],
   "file": "third_part/submodule/andren/source/base/ufile.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/string_tool.cpp.o", "third_part/submodule/andren/source/base/string_tool.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/string_tool.cpp.o", "third_part/submodule/andren/source/base/string_tool.cpp"],
   "file": "third_part/submodule/andren/source/base/string_tool.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/threadpool.cpp.o", "third_part/submodule/andren/source/base/threadpool.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/threadpool.cpp.o", "third_part/submodule/andren/source/base/threadpool.cpp"],
   "file": "third_part/submodule/andren/source/base/threadpool.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/thread.cpp.o", "third_part/submodule/andren/source/base/thread.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/thread.cpp.o", "third_part/submodule/andren/source/base/thread.cpp"],
   "file": "third_part/submodule/andren/source/base/thread.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/mysql_statement.cpp.o", "third_part/submodule/andren/source/base/mysql_statement.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/mysql_statement.cpp.o", "third_part/submodule/andren/source/base/mysql_statement.cpp"],
   "file": "third_part/submodule/andren/source/base/mysql_statement.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/smem.cpp.o", "third_part/submodule/andren/source/base/smem.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/smem.cpp.o", "third_part/submodule/andren/source/base/smem.cpp"],
   "file": "third_part/submodule/andren/source/base/smem.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/user_event_service.cpp.o", "third_part/submodule/andren/source/extention/user_event_service.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/user_event_service.cpp.o", "third_part/submodule/andren/source/extention/user_event_service.cpp"],
   "file": "third_part/submodule/andren/source/extention/user_event_service.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/database_service.cpp.o", "third_part/submodule/andren/source/extention/database_service.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/database_service.cpp.o", "third_part/submodule/andren/source/extention/database_service.cpp"],
   "file": "third_part/submodule/andren/source/extention/database_service.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/database_pgsql.cpp.o", "third_part/submodule/andren/source/extention/database_pgsql.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/database_pgsql.cpp.o", "third_part/submodule/andren/source/extention/database_pgsql.cpp"],
   "file": "third_part/submodule/andren/source/extention/database_pgsql.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/event_loop.cpp.o", "third_part/submodule/andren/source/extention/event_loop.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/event_loop.cpp.o", "third_part/submodule/andren/source/extention/event_loop.cpp"],
   "file": "third_part/submodule/andren/source/extention/event_loop.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/repoller.cpp.o", "third_part/submodule/andren/source/extention/repoller.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/repoller.cpp.o", "third_part/submodule/andren/source/extention/repoller.cpp"],
   "file": "third_part/submodule/andren/source/extention/repoller.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/sslstream.cpp.o", "third_part/submodule/andren/source/extention/sslstream.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/sslstream.cpp.o", "third_part/submodule/andren/source/extention/sslstream.cpp"],
   "file": "third_part/submodule/andren/source/extention/sslstream.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/http1.1.cpp.o", "third_part/submodule/andren/source/extention/http1.1.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/http1.1.cpp.o", "third_part/submodule/andren/source/extention/http1.1.cpp"],
   "file": "third_part/submodule/andren/source/extention/http1.1.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/io_datagram.cpp.o", "third_part/submodule/andren/source/extention/io_datagram.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/io_datagram.cpp.o", "third_part/submodule/andren/source/extention/io_datagram.cpp"],
   "file": "third_part/submodule/andren/source/extention/io_datagram.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/http3.cpp.o", "third_part/submodule/andren/source/extention/http3.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/http3.cpp.o", "third_part/submodule/andren/source/extention/http3.cpp"],
   "file": "third_part/submodule/andren/source/extention/http3.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/task_distributor.cpp.o", "third_part/submodule/andren/source/extention/task_distributor.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/task_distributor.cpp.o", "third_part/submodule/andren/source/extention/task_distributor.cpp"],
   "file": "third_part/submodule/andren/source/extention/task_distributor.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/http2.cpp.o", "third_part/submodule/andren/source/extention/http2.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/http2.cpp.o", "third_part/submodule/andren/source/extention/http2.cpp"],
   "file": "third_part/submodule/andren/source/extention/http2.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/datagram.cpp.o", "third_part/submodule/andren/source/extention/datagram.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/datagram.cpp.o", "third_part/submodule/andren/source/extention/datagram.cpp"],
   "file": "third_part/submodule/andren/source/extention/datagram.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/io_tcp.cpp.o", "third_part/submodule/andren/source/extention/io_tcp.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/io_tcp.cpp.o", "third_part/submodule/andren/source/extention/io_tcp.cpp"],
   "file": "third_part/submodule/andren/source/extention/io_tcp.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/executor.cpp.o", "third_part/submodule/andren/source/extention/executor.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/executor.cpp.o", "third_part/submodule/andren/source/extention/executor.cpp"],
   "file": "third_part/submodule/andren/source/extention/executor.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/events_service.cpp.o", "third_part/submodule/andren/source/extention/events_service.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/events_service.cpp.o", "third_part/submodule/andren/source/extention/events_service.cpp"],
   "file": "third_part/submodule/andren/source/extention/events_service.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/io_file.cpp.o", "third_part/submodule/andren/source/extention/io_file.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/io_file.cpp.o", "third_part/submodule/andren/source/extention/io_file.cpp"],
   "file": "third_part/submodule/andren/source/extention/io_file.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/sockstream.cpp.o", "third_part/submodule/andren/source/extention/sockstream.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/sockstream.cpp.o", "third_part/submodule/andren/source/extention/sockstream.cpp"],
   "file": "third_part/submodule/andren/source/extention/sockstream.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/schedule.cpp.o", "third_part/submodule/andren/source/extention/schedule.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/schedule.cpp.o", "third_part/submodule/andren/source/extention/schedule.cpp"],
   "file": "third_part/submodule/andren/source/extention/schedule.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/freelock_smem.cpp.o", "third_part/submodule/andren/source/extention/freelock_smem.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/freelock_smem.cpp.o", "third_part/submodule/andren/source/extention/freelock_smem.cpp"],
   "file": "third_part/submodule/andren/source/extention/freelock_smem.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/io_service.cpp.o", "third_part/submodule/andren/source/extention/io_service.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/io_service.cpp.o", "third_part/submodule/andren/source/extention/io_service.cpp"],
   "file": "third_part/submodule/andren/source/extention/io_service.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/acceptor.cpp.o", "third_part/submodule/andren/source/extention/acceptor.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/acceptor.cpp.o", "third_part/submodule/andren/source/extention/acceptor.cpp"],
   "file": "third_part/submodule/andren/source/extention/acceptor.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/afile.cpp.o", "third_part/submodule/andren/source/extention/afile.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/afile.cpp.o", "third_part/submodule/andren/source/extention/afile.cpp"],
   "file": "third_part/submodule/andren/source/extention/afile.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/test_andren_websocket_client/linux/x86_64/debug/example/test_andren_websocket_client.cpp.o", "example/test_andren_websocket_client.cpp"],
-  "file": "example/test_andren_websocket_client.cpp"
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/pgsql_api.cpp.o", "third_part/submodule/andren/source/base/pgsql_api.cpp"],
+  "file": "third_part/submodule/andren/source/base/pgsql_api.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_unixdomain/linux/x86_64/debug/third_part/submodule/andren/example/example_unixdomain_socket.cpp.o", "third_part/submodule/andren/example/example_unixdomain_socket.cpp"],
-  "file": "third_part/submodule/andren/example/example_unixdomain_socket.cpp"
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/ssl.cpp.o", "third_part/submodule/andren/source/base/ssl.cpp"],
+  "file": "third_part/submodule/andren/source/base/ssl.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_detachtcpserver/linux/x86_64/debug/third_part/submodule/andren/example/example_detachtcpserver.cpp.o", "third_part/submodule/andren/example/example_detachtcpserver.cpp"],
-  "file": "third_part/submodule/andren/example/example_detachtcpserver.cpp"
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/zlibstream.cpp.o", "third_part/submodule/andren/source/base/zlibstream.cpp"],
+  "file": "third_part/submodule/andren/source/base/zlibstream.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_4xheap/linux/x86_64/debug/third_part/submodule/andren/example/example_4xHeap.cpp.o", "third_part/submodule/andren/example/example_4xHeap.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/epoll.cpp.o", "third_part/submodule/andren/source/base/epoll.cpp"],
+  "file": "third_part/submodule/andren/source/base/epoll.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/pipe.cpp.o", "third_part/submodule/andren/source/base/pipe.cpp"],
+  "file": "third_part/submodule/andren/source/base/pipe.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/uid_creator.cpp.o", "third_part/submodule/andren/source/base/uid_creator.cpp"],
+  "file": "third_part/submodule/andren/source/base/uid_creator.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/socket.cpp.o", "third_part/submodule/andren/source/base/socket.cpp"],
+  "file": "third_part/submodule/andren/source/base/socket.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/signal.cpp.o", "third_part/submodule/andren/source/base/signal.cpp"],
+  "file": "third_part/submodule/andren/source/base/signal.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/end_point.cpp.o", "third_part/submodule/andren/source/base/end_point.cpp"],
+  "file": "third_part/submodule/andren/source/base/end_point.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/ufile.cpp.o", "third_part/submodule/andren/source/base/ufile.cpp"],
+  "file": "third_part/submodule/andren/source/base/ufile.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/string_tool.cpp.o", "third_part/submodule/andren/source/base/string_tool.cpp"],
+  "file": "third_part/submodule/andren/source/base/string_tool.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/threadpool.cpp.o", "third_part/submodule/andren/source/base/threadpool.cpp"],
+  "file": "third_part/submodule/andren/source/base/threadpool.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/thread.cpp.o", "third_part/submodule/andren/source/base/thread.cpp"],
+  "file": "third_part/submodule/andren/source/base/thread.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/mysql_statement.cpp.o", "third_part/submodule/andren/source/base/mysql_statement.cpp"],
+  "file": "third_part/submodule/andren/source/base/mysql_statement.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/base/smem.cpp.o", "third_part/submodule/andren/source/base/smem.cpp"],
+  "file": "third_part/submodule/andren/source/base/smem.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/user_event_service.cpp.o", "third_part/submodule/andren/source/extention/user_event_service.cpp"],
+  "file": "third_part/submodule/andren/source/extention/user_event_service.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/database_service.cpp.o", "third_part/submodule/andren/source/extention/database_service.cpp"],
+  "file": "third_part/submodule/andren/source/extention/database_service.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/database_pgsql.cpp.o", "third_part/submodule/andren/source/extention/database_pgsql.cpp"],
+  "file": "third_part/submodule/andren/source/extention/database_pgsql.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/event_loop.cpp.o", "third_part/submodule/andren/source/extention/event_loop.cpp"],
+  "file": "third_part/submodule/andren/source/extention/event_loop.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/repoller.cpp.o", "third_part/submodule/andren/source/extention/repoller.cpp"],
+  "file": "third_part/submodule/andren/source/extention/repoller.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/sslstream.cpp.o", "third_part/submodule/andren/source/extention/sslstream.cpp"],
+  "file": "third_part/submodule/andren/source/extention/sslstream.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/http1.1.cpp.o", "third_part/submodule/andren/source/extention/http1.1.cpp"],
+  "file": "third_part/submodule/andren/source/extention/http1.1.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/io_datagram.cpp.o", "third_part/submodule/andren/source/extention/io_datagram.cpp"],
+  "file": "third_part/submodule/andren/source/extention/io_datagram.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/http3.cpp.o", "third_part/submodule/andren/source/extention/http3.cpp"],
+  "file": "third_part/submodule/andren/source/extention/http3.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/task_distributor.cpp.o", "third_part/submodule/andren/source/extention/task_distributor.cpp"],
+  "file": "third_part/submodule/andren/source/extention/task_distributor.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/http2.cpp.o", "third_part/submodule/andren/source/extention/http2.cpp"],
+  "file": "third_part/submodule/andren/source/extention/http2.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/datagram.cpp.o", "third_part/submodule/andren/source/extention/datagram.cpp"],
+  "file": "third_part/submodule/andren/source/extention/datagram.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/io_tcp.cpp.o", "third_part/submodule/andren/source/extention/io_tcp.cpp"],
+  "file": "third_part/submodule/andren/source/extention/io_tcp.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/executor.cpp.o", "third_part/submodule/andren/source/extention/executor.cpp"],
+  "file": "third_part/submodule/andren/source/extention/executor.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/events_service.cpp.o", "third_part/submodule/andren/source/extention/events_service.cpp"],
+  "file": "third_part/submodule/andren/source/extention/events_service.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/io_file.cpp.o", "third_part/submodule/andren/source/extention/io_file.cpp"],
+  "file": "third_part/submodule/andren/source/extention/io_file.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/sockstream.cpp.o", "third_part/submodule/andren/source/extention/sockstream.cpp"],
+  "file": "third_part/submodule/andren/source/extention/sockstream.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/schedule.cpp.o", "third_part/submodule/andren/source/extention/schedule.cpp"],
+  "file": "third_part/submodule/andren/source/extention/schedule.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/freelock_smem.cpp.o", "third_part/submodule/andren/source/extention/freelock_smem.cpp"],
+  "file": "third_part/submodule/andren/source/extention/freelock_smem.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/io_service.cpp.o", "third_part/submodule/andren/source/extention/io_service.cpp"],
+  "file": "third_part/submodule/andren/source/extention/io_service.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/acceptor.cpp.o", "third_part/submodule/andren/source/extention/acceptor.cpp"],
+  "file": "third_part/submodule/andren/source/extention/acceptor.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren_a/linux/x86_64/debug/third_part/submodule/andren/source/extention/afile.cpp.o", "third_part/submodule/andren/source/extention/afile.cpp"],
+  "file": "third_part/submodule/andren/source/extention/afile.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_4xheap/linux/x86_64/debug/third_part/submodule/andren/example/example_4xHeap.cpp.o", "third_part/submodule/andren/example/example_4xHeap.cpp"],
   "file": "third_part/submodule/andren/example/example_4xHeap.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/andren-boost/linux/x86_64/debug/src/sys_signal.c.o", "src/sys_signal.c"],
-  "file": "src/sys_signal.c"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/andren-boost/linux/x86_64/debug/src/boost_tcp_udp/co_io_context_manager.cc.o", "src/boost_tcp_udp/co_io_context_manager.cc"],
-  "file": "src/boost_tcp_udp/co_io_context_manager.cc"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/andren-boost/linux/x86_64/debug/src/azure_protocol.cpp.o", "src/azure_protocol.cpp"],
-  "file": "src/azure_protocol.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/andren-boost/linux/x86_64/debug/src/boost_tcp_udp/co_sockstream.cpp.o", "src/boost_tcp_udp/co_sockstream.cpp"],
-  "file": "src/boost_tcp_udp/co_sockstream.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/andren-boost/linux/x86_64/debug/src/boost_tcp_udp/co_sockstream_awaiter.cpp.o", "src/boost_tcp_udp/co_sockstream_awaiter.cpp"],
-  "file": "src/boost_tcp_udp/co_sockstream_awaiter.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/andren-boost/linux/x86_64/debug/src/boost_tcp_udp/co_user_datagram.cpp.o", "src/boost_tcp_udp/co_user_datagram.cpp"],
-  "file": "src/boost_tcp_udp/co_user_datagram.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/andren-boost/linux/x86_64/debug/src/boost_websocket/co_websocket.cpp.o", "src/boost_websocket/co_websocket.cpp"],
-  "file": "src/boost_websocket/co_websocket.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/andren-boost/linux/x86_64/debug/src/global.cpp.o", "src/global.cpp"],
-  "file": "src/global.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/andren-boost/linux/x86_64/debug/src/boost_http/boost_http_response.cpp.o", "src/boost_http/boost_http_response.cpp"],
-  "file": "src/boost_http/boost_http_response.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/andren-boost/linux/x86_64/debug/src/boost_http/boost_http_request.cpp.o", "src/boost_http/boost_http_request.cpp"],
-  "file": "src/boost_http/boost_http_request.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_threadpool/linux/x86_64/debug/third_part/submodule/andren/example/example_threadpool.cpp.o", "third_part/submodule/andren/example/example_threadpool.cpp"],
-  "file": "third_part/submodule/andren/example/example_threadpool.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_shmutex/linux/x86_64/debug/third_part/submodule/andren/example/example_shmutex.cpp.o", "third_part/submodule/andren/example/example_shmutex.cpp"],
-  "file": "third_part/submodule/andren/example/example_shmutex.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_coro_task/linux/x86_64/debug/third_part/submodule/andren/example/example_coro_task.cpp.o", "third_part/submodule/andren/example/example_coro_task.cpp"],
-  "file": "third_part/submodule/andren/example/example_coro_task.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_shmem/linux/x86_64/debug/third_part/submodule/andren/example/example_shmem.cpp.o", "third_part/submodule/andren/example/example_shmem.cpp"],
-  "file": "third_part/submodule/andren/example/example_shmem.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_timer/linux/x86_64/debug/third_part/submodule/andren/example/example_timer.cpp.o", "third_part/submodule/andren/example/example_timer.cpp"],
-  "file": "third_part/submodule/andren/example/example_timer.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/test_websocket_office_awaitable_server/linux/x86_64/debug/example/test_websocket_office_awaitable_server.cpp.o", "example/test_websocket_office_awaitable_server.cpp"],
-  "file": "example/test_websocket_office_awaitable_server.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/test_udp/linux/x86_64/debug/example/test_udp.cpp.o", "example/test_udp.cpp"],
-  "file": "example/test_udp.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_afio/linux/x86_64/debug/third_part/submodule/andren/example/example_afio.cpp.o", "third_part/submodule/andren/example/example_afio.cpp"],
-  "file": "third_part/submodule/andren/example/example_afio.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_zlibstream/linux/x86_64/debug/third_part/submodule/andren/example/example_zlibstream.cpp.o", "third_part/submodule/andren/example/example_zlibstream.cpp"],
-  "file": "third_part/submodule/andren/example/example_zlibstream.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/test_hello_world/linux/x86_64/debug/example/test_hello_world.cpp.o", "example/test_hello_world.cpp"],
-  "file": "example/test_hello_world.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/pgsql_api.cpp.o", "third_part/submodule/andren/source/base/pgsql_api.cpp"],
-  "file": "third_part/submodule/andren/source/base/pgsql_api.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/ssl.cpp.o", "third_part/submodule/andren/source/base/ssl.cpp"],
-  "file": "third_part/submodule/andren/source/base/ssl.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/zlibstream.cpp.o", "third_part/submodule/andren/source/base/zlibstream.cpp"],
-  "file": "third_part/submodule/andren/source/base/zlibstream.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/epoll.cpp.o", "third_part/submodule/andren/source/base/epoll.cpp"],
-  "file": "third_part/submodule/andren/source/base/epoll.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/pipe.cpp.o", "third_part/submodule/andren/source/base/pipe.cpp"],
-  "file": "third_part/submodule/andren/source/base/pipe.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/uid_creator.cpp.o", "third_part/submodule/andren/source/base/uid_creator.cpp"],
-  "file": "third_part/submodule/andren/source/base/uid_creator.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/socket.cpp.o", "third_part/submodule/andren/source/base/socket.cpp"],
-  "file": "third_part/submodule/andren/source/base/socket.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/signal.cpp.o", "third_part/submodule/andren/source/base/signal.cpp"],
-  "file": "third_part/submodule/andren/source/base/signal.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/end_point.cpp.o", "third_part/submodule/andren/source/base/end_point.cpp"],
-  "file": "third_part/submodule/andren/source/base/end_point.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/ufile.cpp.o", "third_part/submodule/andren/source/base/ufile.cpp"],
-  "file": "third_part/submodule/andren/source/base/ufile.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/string_tool.cpp.o", "third_part/submodule/andren/source/base/string_tool.cpp"],
-  "file": "third_part/submodule/andren/source/base/string_tool.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/threadpool.cpp.o", "third_part/submodule/andren/source/base/threadpool.cpp"],
-  "file": "third_part/submodule/andren/source/base/threadpool.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/thread.cpp.o", "third_part/submodule/andren/source/base/thread.cpp"],
-  "file": "third_part/submodule/andren/source/base/thread.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/mysql_statement.cpp.o", "third_part/submodule/andren/source/base/mysql_statement.cpp"],
-  "file": "third_part/submodule/andren/source/base/mysql_statement.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/base/smem.cpp.o", "third_part/submodule/andren/source/base/smem.cpp"],
-  "file": "third_part/submodule/andren/source/base/smem.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/user_event_service.cpp.o", "third_part/submodule/andren/source/extention/user_event_service.cpp"],
-  "file": "third_part/submodule/andren/source/extention/user_event_service.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/database_service.cpp.o", "third_part/submodule/andren/source/extention/database_service.cpp"],
-  "file": "third_part/submodule/andren/source/extention/database_service.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/database_pgsql.cpp.o", "third_part/submodule/andren/source/extention/database_pgsql.cpp"],
-  "file": "third_part/submodule/andren/source/extention/database_pgsql.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/event_loop.cpp.o", "third_part/submodule/andren/source/extention/event_loop.cpp"],
-  "file": "third_part/submodule/andren/source/extention/event_loop.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/repoller.cpp.o", "third_part/submodule/andren/source/extention/repoller.cpp"],
-  "file": "third_part/submodule/andren/source/extention/repoller.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/sslstream.cpp.o", "third_part/submodule/andren/source/extention/sslstream.cpp"],
-  "file": "third_part/submodule/andren/source/extention/sslstream.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/http1.1.cpp.o", "third_part/submodule/andren/source/extention/http1.1.cpp"],
-  "file": "third_part/submodule/andren/source/extention/http1.1.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/io_datagram.cpp.o", "third_part/submodule/andren/source/extention/io_datagram.cpp"],
-  "file": "third_part/submodule/andren/source/extention/io_datagram.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/http3.cpp.o", "third_part/submodule/andren/source/extention/http3.cpp"],
-  "file": "third_part/submodule/andren/source/extention/http3.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/task_distributor.cpp.o", "third_part/submodule/andren/source/extention/task_distributor.cpp"],
-  "file": "third_part/submodule/andren/source/extention/task_distributor.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/http2.cpp.o", "third_part/submodule/andren/source/extention/http2.cpp"],
-  "file": "third_part/submodule/andren/source/extention/http2.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/datagram.cpp.o", "third_part/submodule/andren/source/extention/datagram.cpp"],
-  "file": "third_part/submodule/andren/source/extention/datagram.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/io_tcp.cpp.o", "third_part/submodule/andren/source/extention/io_tcp.cpp"],
-  "file": "third_part/submodule/andren/source/extention/io_tcp.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/executor.cpp.o", "third_part/submodule/andren/source/extention/executor.cpp"],
-  "file": "third_part/submodule/andren/source/extention/executor.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/events_service.cpp.o", "third_part/submodule/andren/source/extention/events_service.cpp"],
-  "file": "third_part/submodule/andren/source/extention/events_service.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/io_file.cpp.o", "third_part/submodule/andren/source/extention/io_file.cpp"],
-  "file": "third_part/submodule/andren/source/extention/io_file.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/sockstream.cpp.o", "third_part/submodule/andren/source/extention/sockstream.cpp"],
-  "file": "third_part/submodule/andren/source/extention/sockstream.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/schedule.cpp.o", "third_part/submodule/andren/source/extention/schedule.cpp"],
-  "file": "third_part/submodule/andren/source/extention/schedule.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/freelock_smem.cpp.o", "third_part/submodule/andren/source/extention/freelock_smem.cpp"],
-  "file": "third_part/submodule/andren/source/extention/freelock_smem.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/io_service.cpp.o", "third_part/submodule/andren/source/extention/io_service.cpp"],
-  "file": "third_part/submodule/andren/source/extention/io_service.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/acceptor.cpp.o", "third_part/submodule/andren/source/extention/acceptor.cpp"],
-  "file": "third_part/submodule/andren/source/extention/acceptor.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/andren/linux/x86_64/debug/third_part/submodule/andren/source/extention/afile.cpp.o", "third_part/submodule/andren/source/extention/afile.cpp"],
-  "file": "third_part/submodule/andren/source/extention/afile.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_signal/linux/x86_64/debug/third_part/submodule/andren/example/example_signal.cpp.o", "third_part/submodule/andren/example/example_signal.cpp"],
-  "file": "third_part/submodule/andren/example/example_signal.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_https2/linux/x86_64/debug/third_part/submodule/andren/example/example_http2.cpp.o", "third_part/submodule/andren/example/example_http2.cpp"],
-  "file": "third_part/submodule/andren/example/example_http2.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/test_io_context_manager/linux/x86_64/debug/example/test_io_context_manager.cpp.o", "example/test_io_context_manager.cpp"],
-  "file": "example/test_io_context_manager.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/test_tcp_client/linux/x86_64/debug/example/test_tcp_client.cpp.o", "example/test_tcp_client.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/test_tcp_client/linux/x86_64/debug/example/test_tcp_client.cpp.o", "example/test_tcp_client.cpp"],
   "file": "example/test_tcp_client.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_sslstream/linux/x86_64/debug/third_part/submodule/andren/example/example_sslstream.cpp.o", "third_part/submodule/andren/example/example_sslstream.cpp"],
-  "file": "third_part/submodule/andren/example/example_sslstream.cpp"
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/test_hello_world/linux/x86_64/debug/example/test_hello_world.cpp.o", "example/test_hello_world.cpp"],
+  "file": "example/test_hello_world.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_ssl_socket/linux/x86_64/debug/third_part/submodule/andren/example/example_ssl.cpp.o", "third_part/submodule/andren/example/example_ssl.cpp"],
-  "file": "third_part/submodule/andren/example/example_ssl.cpp"
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_detachtcpserver/linux/x86_64/debug/third_part/submodule/andren/example/example_detachtcpserver.cpp.o", "third_part/submodule/andren/example/example_detachtcpserver.cpp"],
+  "file": "third_part/submodule/andren/example/example_detachtcpserver.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_freelockshmem/linux/x86_64/debug/third_part/submodule/andren/example/example_freelockshmem.cpp.o", "third_part/submodule/andren/example/example_freelockshmem.cpp"],
-  "file": "third_part/submodule/andren/example/example_freelockshmem.cpp"
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/test_andren_websocket_client/linux/x86_64/debug/example/test_andren_websocket_client.cpp.o", "example/test_andren_websocket_client.cpp"],
+  "file": "example/test_andren_websocket_client.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_mutexque/linux/x86_64/debug/third_part/submodule/andren/example/example_mutexque.cpp.o", "third_part/submodule/andren/example/example_mutexque.cpp"],
-  "file": "third_part/submodule/andren/example/example_mutexque.cpp"
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_shmem/linux/x86_64/debug/third_part/submodule/andren/example/example_shmem.cpp.o", "third_part/submodule/andren/example/example_shmem.cpp"],
+  "file": "third_part/submodule/andren/example/example_shmem.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_mysql_statement/linux/x86_64/debug/third_part/submodule/andren/example/example_mysql_statement.cpp.o", "third_part/submodule/andren/example/example_mysql_statement.cpp"],
-  "file": "third_part/submodule/andren/example/example_mysql_statement.cpp"
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/test_websocket_office_awaitable_server/linux/x86_64/debug/example/test_websocket_office_awaitable_server.cpp.o", "example/test_websocket_office_awaitable_server.cpp"],
+  "file": "example/test_websocket_office_awaitable_server.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/test_websocket_client_coro/linux/x86_64/debug/example/test_websocket_client_coro.cpp.o", "example/test_websocket_client_coro.cpp"],
-  "file": "example/test_websocket_client_coro.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_epoll_tcpserver/linux/x86_64/debug/third_part/submodule/andren/example/example_epoll_tcpserver.cpp.o", "third_part/submodule/andren/example/example_epoll_tcpserver.cpp"],
-  "file": "third_part/submodule/andren/example/example_epoll_tcpserver.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/test_websocket_office_awaitable_client/linux/x86_64/debug/example/test_websocket_office_awaitable_client.cpp.o", "example/test_websocket_office_awaitable_client.cpp"],
-  "file": "example/test_websocket_office_awaitable_client.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_io_file/linux/x86_64/debug/third_part/submodule/andren/example/example_io_file.cpp.o", "third_part/submodule/andren/example/example_io_file.cpp"],
-  "file": "third_part/submodule/andren/example/example_io_file.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/andren-boost_a/linux/x86_64/debug/src/sys_signal.c.o", "src/sys_signal.c"],
-  "file": "src/sys_signal.c"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/andren-boost_a/linux/x86_64/debug/src/boost_tcp_udp/co_io_context_manager.cc.o", "src/boost_tcp_udp/co_io_context_manager.cc"],
-  "file": "src/boost_tcp_udp/co_io_context_manager.cc"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/andren-boost_a/linux/x86_64/debug/src/azure_protocol.cpp.o", "src/azure_protocol.cpp"],
-  "file": "src/azure_protocol.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/andren-boost_a/linux/x86_64/debug/src/boost_tcp_udp/co_sockstream.cpp.o", "src/boost_tcp_udp/co_sockstream.cpp"],
-  "file": "src/boost_tcp_udp/co_sockstream.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/andren-boost_a/linux/x86_64/debug/src/boost_tcp_udp/co_sockstream_awaiter.cpp.o", "src/boost_tcp_udp/co_sockstream_awaiter.cpp"],
-  "file": "src/boost_tcp_udp/co_sockstream_awaiter.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/andren-boost_a/linux/x86_64/debug/src/boost_tcp_udp/co_user_datagram.cpp.o", "src/boost_tcp_udp/co_user_datagram.cpp"],
-  "file": "src/boost_tcp_udp/co_user_datagram.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/andren-boost_a/linux/x86_64/debug/src/boost_websocket/co_websocket.cpp.o", "src/boost_websocket/co_websocket.cpp"],
-  "file": "src/boost_websocket/co_websocket.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/andren-boost_a/linux/x86_64/debug/src/global.cpp.o", "src/global.cpp"],
-  "file": "src/global.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/andren-boost_a/linux/x86_64/debug/src/boost_http/boost_http_response.cpp.o", "src/boost_http/boost_http_response.cpp"],
-  "file": "src/boost_http/boost_http_response.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/andren-boost_a/linux/x86_64/debug/src/boost_http/boost_http_request.cpp.o", "src/boost_http/boost_http_request.cpp"],
-  "file": "src/boost_http/boost_http_request.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_socket/linux/x86_64/debug/third_part/submodule/andren/example/example_socket.cpp.o", "third_part/submodule/andren/example/example_socket.cpp"],
-  "file": "third_part/submodule/andren/example/example_socket.cpp"
-},
-{
-  "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_taskdistributor/linux/x86_64/debug/third_part/submodule/andren/example/example_taskdistributor.cpp.o", "third_part/submodule/andren/example/example_taskdistributor.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_taskdistributor/linux/x86_64/debug/third_part/submodule/andren/example/example_taskdistributor.cpp.o", "third_part/submodule/andren/example/example_taskdistributor.cpp"],
   "file": "third_part/submodule/andren/example/example_taskdistributor.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/test_tcp_server/linux/x86_64/debug/example/test_tcp_server.cpp.o", "example/test_tcp_server.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_zlibstream/linux/x86_64/debug/third_part/submodule/andren/example/example_zlibstream.cpp.o", "third_part/submodule/andren/example/example_zlibstream.cpp"],
+  "file": "third_part/submodule/andren/example/example_zlibstream.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/test_io_context_manager/linux/x86_64/debug/example/test_io_context_manager.cpp.o", "example/test_io_context_manager.cpp"],
+  "file": "example/test_io_context_manager.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/test_tcp_server/linux/x86_64/debug/example/test_tcp_server.cpp.o", "example/test_tcp_server.cpp"],
   "file": "example/test_tcp_server.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_2xheap/linux/x86_64/debug/third_part/submodule/andren/example/example_2xHeap.cpp.o", "third_part/submodule/andren/example/example_2xHeap.cpp"],
-  "file": "third_part/submodule/andren/example/example_2xHeap.cpp"
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_timer/linux/x86_64/debug/third_part/submodule/andren/example/example_timer.cpp.o", "third_part/submodule/andren/example/example_timer.cpp"],
+  "file": "third_part/submodule/andren/example/example_timer.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_pipe/linux/x86_64/debug/third_part/submodule/andren/example/example_pipe.cpp.o", "third_part/submodule/andren/example/example_pipe.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_afio/linux/x86_64/debug/third_part/submodule/andren/example/example_afio.cpp.o", "third_part/submodule/andren/example/example_afio.cpp"],
+  "file": "third_part/submodule/andren/example/example_afio.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/andren-boost_a/linux/x86_64/debug/src/sys_signal.c.o", "src/sys_signal.c"],
+  "file": "src/sys_signal.c"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/andren-boost_a/linux/x86_64/debug/src/boost_tcp_udp/co_io_context_manager.cc.o", "src/boost_tcp_udp/co_io_context_manager.cc"],
+  "file": "src/boost_tcp_udp/co_io_context_manager.cc"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/andren-boost_a/linux/x86_64/debug/src/azure_protocol.cpp.o", "src/azure_protocol.cpp"],
+  "file": "src/azure_protocol.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/andren-boost_a/linux/x86_64/debug/src/boost_tcp_udp/co_sockstream.cpp.o", "src/boost_tcp_udp/co_sockstream.cpp"],
+  "file": "src/boost_tcp_udp/co_sockstream.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/andren-boost_a/linux/x86_64/debug/src/boost_tcp_udp/co_sockstream_awaiter.cpp.o", "src/boost_tcp_udp/co_sockstream_awaiter.cpp"],
+  "file": "src/boost_tcp_udp/co_sockstream_awaiter.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/andren-boost_a/linux/x86_64/debug/src/boost_tcp_udp/co_user_datagram.cpp.o", "src/boost_tcp_udp/co_user_datagram.cpp"],
+  "file": "src/boost_tcp_udp/co_user_datagram.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/andren-boost_a/linux/x86_64/debug/src/boost_websocket/co_websocket.cpp.o", "src/boost_websocket/co_websocket.cpp"],
+  "file": "src/boost_websocket/co_websocket.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/andren-boost_a/linux/x86_64/debug/src/global.cpp.o", "src/global.cpp"],
+  "file": "src/global.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/andren-boost_a/linux/x86_64/debug/src/spl_protocol.cpp.o", "src/spl_protocol.cpp"],
+  "file": "src/spl_protocol.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/andren-boost_a/linux/x86_64/debug/src/boost_http/boost_http_response.cpp.o", "src/boost_http/boost_http_response.cpp"],
+  "file": "src/boost_http/boost_http_response.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/andren-boost_a/linux/x86_64/debug/src/boost_http/boost_http_request.cpp.o", "src/boost_http/boost_http_request.cpp"],
+  "file": "src/boost_http/boost_http_request.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_sslstream/linux/x86_64/debug/third_part/submodule/andren/example/example_sslstream.cpp.o", "third_part/submodule/andren/example/example_sslstream.cpp"],
+  "file": "third_part/submodule/andren/example/example_sslstream.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_shmutex/linux/x86_64/debug/third_part/submodule/andren/example/example_shmutex.cpp.o", "third_part/submodule/andren/example/example_shmutex.cpp"],
+  "file": "third_part/submodule/andren/example/example_shmutex.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_coro_task/linux/x86_64/debug/third_part/submodule/andren/example/example_coro_task.cpp.o", "third_part/submodule/andren/example/example_coro_task.cpp"],
+  "file": "third_part/submodule/andren/example/example_coro_task.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/andren-boost/linux/x86_64/debug/src/sys_signal.c.o", "src/sys_signal.c"],
+  "file": "src/sys_signal.c"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/andren-boost/linux/x86_64/debug/src/boost_tcp_udp/co_io_context_manager.cc.o", "src/boost_tcp_udp/co_io_context_manager.cc"],
+  "file": "src/boost_tcp_udp/co_io_context_manager.cc"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/andren-boost/linux/x86_64/debug/src/azure_protocol.cpp.o", "src/azure_protocol.cpp"],
+  "file": "src/azure_protocol.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/andren-boost/linux/x86_64/debug/src/boost_tcp_udp/co_sockstream.cpp.o", "src/boost_tcp_udp/co_sockstream.cpp"],
+  "file": "src/boost_tcp_udp/co_sockstream.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/andren-boost/linux/x86_64/debug/src/boost_tcp_udp/co_sockstream_awaiter.cpp.o", "src/boost_tcp_udp/co_sockstream_awaiter.cpp"],
+  "file": "src/boost_tcp_udp/co_sockstream_awaiter.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/andren-boost/linux/x86_64/debug/src/boost_tcp_udp/co_user_datagram.cpp.o", "src/boost_tcp_udp/co_user_datagram.cpp"],
+  "file": "src/boost_tcp_udp/co_user_datagram.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/andren-boost/linux/x86_64/debug/src/boost_websocket/co_websocket.cpp.o", "src/boost_websocket/co_websocket.cpp"],
+  "file": "src/boost_websocket/co_websocket.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/andren-boost/linux/x86_64/debug/src/global.cpp.o", "src/global.cpp"],
+  "file": "src/global.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/andren-boost/linux/x86_64/debug/src/spl_protocol.cpp.o", "src/spl_protocol.cpp"],
+  "file": "src/spl_protocol.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/andren-boost/linux/x86_64/debug/src/boost_http/boost_http_response.cpp.o", "src/boost_http/boost_http_response.cpp"],
+  "file": "src/boost_http/boost_http_response.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/andren-boost/linux/x86_64/debug/src/boost_http/boost_http_request.cpp.o", "src/boost_http/boost_http_request.cpp"],
+  "file": "src/boost_http/boost_http_request.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_signal/linux/x86_64/debug/third_part/submodule/andren/example/example_signal.cpp.o", "third_part/submodule/andren/example/example_signal.cpp"],
+  "file": "third_part/submodule/andren/example/example_signal.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_io_file/linux/x86_64/debug/third_part/submodule/andren/example/example_io_file.cpp.o", "third_part/submodule/andren/example/example_io_file.cpp"],
+  "file": "third_part/submodule/andren/example/example_io_file.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/test_websocket_server_coro/linux/x86_64/debug/example/test_websocket_server_coro.cpp.o", "example/test_websocket_server_coro.cpp"],
+  "file": "example/test_websocket_server_coro.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_ssl_socket/linux/x86_64/debug/third_part/submodule/andren/example/example_ssl.cpp.o", "third_part/submodule/andren/example/example_ssl.cpp"],
+  "file": "third_part/submodule/andren/example/example_ssl.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_pgsql_statement/linux/x86_64/debug/third_part/submodule/andren/example/example_pgsql.cpp.o", "third_part/submodule/andren/example/example_pgsql.cpp"],
+  "file": "third_part/submodule/andren/example/example_pgsql.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_mysql_statement/linux/x86_64/debug/third_part/submodule/andren/example/example_mysql_statement.cpp.o", "third_part/submodule/andren/example/example_mysql_statement.cpp"],
+  "file": "third_part/submodule/andren/example/example_mysql_statement.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_threadpool/linux/x86_64/debug/third_part/submodule/andren/example/example_threadpool.cpp.o", "third_part/submodule/andren/example/example_threadpool.cpp"],
+  "file": "third_part/submodule/andren/example/example_threadpool.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/test_udp/linux/x86_64/debug/example/test_udp.cpp.o", "example/test_udp.cpp"],
+  "file": "example/test_udp.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_mutexque/linux/x86_64/debug/third_part/submodule/andren/example/example_mutexque.cpp.o", "third_part/submodule/andren/example/example_mutexque.cpp"],
+  "file": "third_part/submodule/andren/example/example_mutexque.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_socket/linux/x86_64/debug/third_part/submodule/andren/example/example_socket.cpp.o", "third_part/submodule/andren/example/example_socket.cpp"],
+  "file": "third_part/submodule/andren/example/example_socket.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/test_websocket_office_awaitable_client/linux/x86_64/debug/example/test_websocket_office_awaitable_client.cpp.o", "example/test_websocket_office_awaitable_client.cpp"],
+  "file": "example/test_websocket_office_awaitable_client.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_pipe/linux/x86_64/debug/third_part/submodule/andren/example/example_pipe.cpp.o", "third_part/submodule/andren/example/example_pipe.cpp"],
   "file": "third_part/submodule/andren/example/example_pipe.cpp"
 },
 {
   "directory": "/home/lanyan/c++/andren_boost",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-o", "build/.objs/test_websocket_server_coro/linux/x86_64/debug/example/test_websocket_server_coro.cpp.o", "example/test_websocket_server_coro.cpp"],
-  "file": "example/test_websocket_server_coro.cpp"
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_unixdomain/linux/x86_64/debug/third_part/submodule/andren/example/example_unixdomain_socket.cpp.o", "third_part/submodule/andren/example/example_unixdomain_socket.cpp"],
+  "file": "third_part/submodule/andren/example/example_unixdomain_socket.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_freelockshmem/linux/x86_64/debug/third_part/submodule/andren/example/example_freelockshmem.cpp.o", "third_part/submodule/andren/example/example_freelockshmem.cpp"],
+  "file": "third_part/submodule/andren/example/example_freelockshmem.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_epoll_tcpserver/linux/x86_64/debug/third_part/submodule/andren/example/example_epoll_tcpserver.cpp.o", "third_part/submodule/andren/example/example_epoll_tcpserver.cpp"],
+  "file": "third_part/submodule/andren/example/example_epoll_tcpserver.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_https2/linux/x86_64/debug/third_part/submodule/andren/example/example_http2.cpp.o", "third_part/submodule/andren/example/example_http2.cpp"],
+  "file": "third_part/submodule/andren/example/example_http2.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-Wall", "-I", "./include/base/", "-I", "./include/extention/", "-o", "build/.objs/test_2xheap/linux/x86_64/debug/third_part/submodule/andren/example/example_2xHeap.cpp.o", "third_part/submodule/andren/example/example_2xHeap.cpp"],
+  "file": "third_part/submodule/andren/example/example_2xHeap.cpp"
+},
+{
+  "directory": "/home/lanyan/c++/andren_boost",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-std=c++20", "-Wall", "-I", "./third_part/submodule/andren/include/base/", "-I", "./third_part/submodule/andren/include/extention/", "-I", "./include/", "-I", "./include/boost_tcp_udp/", "-I", "./include/boost_http/", "-I", "./include/boost_websocket/", "-I", "./include/virtual_session/", "-o", "build/.objs/test_websocket_client_coro/linux/x86_64/debug/example/test_websocket_client_coro.cpp.o", "example/test_websocket_client_coro.cpp"],
+  "file": "example/test_websocket_client_coro.cpp"
 }]
