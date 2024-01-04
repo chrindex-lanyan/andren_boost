@@ -310,6 +310,9 @@ namespace chrindex::andren_boost
     // 这个结构体的内存布局不是平凡的
     struct fragment_group_sender_t
     {
+        using data_buffer_type 
+            = fragment_group_t::fragment_buffer_t;
+
         fragment_group_sender_t() = default;
         ~fragment_group_sender_t () = default;
 
@@ -340,9 +343,19 @@ namespace chrindex::andren_boost
         /// 取出一次队列数据，
         /// 数据可能会比较大。 
         /// 数据大小 约等于 就绪队列.size() * 单个fragment大小。
-        /// 返回拼接好的数据
+        /// 返回拼接好的数据.
+        /// 拼接数据可能会出现大量的数据拷贝，请考虑是否需要。
         std::string 
             fecth_some_data();
+
+        /// 按优先级返回一组准备用于发送的数据，
+        /// 这些数据不会被重新拼接，
+        /// 这可减少拼接时的数据拷贝；
+        /// 此外，当需要发送大量数据时，
+        /// 不拼接数据对某些较小的group
+        /// 能带来更低的传输时延。
+        std::vector<data_buffer_type> 
+            fecth_and_no_combine();
 
         /// 从等待表分配一些fragment到就绪队列。
         /// 返回的是本次分配的数量。
@@ -350,8 +363,9 @@ namespace chrindex::andren_boost
 
     private:
     
+        
         using _ready_data_t = std::tuple<uint32_t, 
-            fragment_group_t::fragment_buffer_t>;
+            data_buffer_type>;
 
         /// 根据组之间的优先级决定发送fragment的次序
         static bool compare_fragment_larger(

@@ -58,7 +58,6 @@ namespace chrindex::andren_boost
         return p_fragment;
     }
 
-    /// 获取整个fragment包的大小（head + data部分）。
     size_t fragment_t::fragment_package_size() const
     {
         return fragment_head_size() + head.data_size;
@@ -106,7 +105,6 @@ namespace chrindex::andren_boost
         return priority != _ano.priority;
     }
 
-    /// 初始化一个新的fragment_group
     bool fragment_group_t::init_a_new_group(
         uint64_t group_id,
         uint32_t group_priority,
@@ -181,8 +179,7 @@ namespace chrindex::andren_boost
         }
         return {{true, std::move(data)}};
     }
-    
-    // 碎片组传输请求
+
     std::string fragment_group_request_t::create_request() const
     {
         return  {
@@ -296,10 +293,6 @@ namespace chrindex::andren_boost
         return std::get<0>(left) > std::get<0>(right);
     }
 
-    /// 取出一次队列数据，
-    /// 数据可能会比较大。 
-    /// 数据大小 约等于 就绪队列.size() * 单个fragment大小。
-    /// 返回拼接好的数据
     std::string 
         fragment_group_sender_t::fecth_some_data()
     {
@@ -315,8 +308,23 @@ namespace chrindex::andren_boost
         return data;
     }
 
-    /// 从等待表分配一些fragment到就绪队列。
-    /// 返回的是本次分配的数量。
+    std::vector<fragment_group_sender_t::data_buffer_type> 
+            fragment_group_sender_t::fecth_and_no_combine()
+    {
+        ready_queue_t ready_que = std::move(m_readyque);
+        std::vector<fragment_group_sender_t::data_buffer_type> 
+            result;
+        
+        result.reserve(ready_que.size());
+        while (!ready_que.empty())
+        {
+            auto [priority, fragment_str] = ready_que.top();
+            result.push_back(std::move(fragment_str));
+            ready_que.pop();
+        }
+        return result;
+    }
+
     size_t fragment_group_sender_t::flush()
     {
         size_t count = 0;
@@ -353,8 +361,6 @@ namespace chrindex::andren_boost
 
     // 碎片组接收器
 
-    /// 添加一些数据，
-    /// 数组会在此被解开成一个或多个fragment、request、response。
     size_t fragment_group_receiver_t::append_some_data(std::string && data)
     {
         std::string str = std::move(buffer) + std::move(data);
@@ -531,7 +537,6 @@ namespace chrindex::andren_boost
         return true;
     }
 
-    /// 取出一个已经完成接收的数据组。
     std::optional<fragment_group_t> 
         fragment_group_receiver_t::fecth_one_completed_group()
     {
@@ -546,7 +551,6 @@ namespace chrindex::andren_boost
         return result;
     }
 
-    /// 取出一个接收到的数据组发送请求。
     std::optional<fragment_group_request_t> 
         fragment_group_receiver_t::fecth_one_group_request()
     {
@@ -561,7 +565,6 @@ namespace chrindex::andren_boost
         return result;
     }
 
-    /// 取出一个已经接收到的数据组接收响应。
     std::optional<fragment_group_response_t>
         fragment_group_receiver_t::fecth_one_group_response()
     {
@@ -576,7 +579,6 @@ namespace chrindex::andren_boost
         return result;
     }
 
-    /// 从等待表或完成表查找一个数据组，返回组的引用。
     fragment_group_t * fragment_group_receiver_t::
         find_group_reference(
             uint64_t gid,  from_map_enum from_map)
@@ -603,38 +605,31 @@ namespace chrindex::andren_boost
         return &iter->second;
     }
            
-
-    /// 等待表的当前大小
     size_t fragment_group_receiver_t::wait_count() const
     {
         return wait_groups.size();
     }
 
-    /// 完成表的当前大小
     size_t fragment_group_receiver_t::completed_count() const
     {
         return completed_groups.size();
     }
 
-    /// 请求表的当前大小
     size_t fragment_group_receiver_t::request_count() const 
     {
         return pending_request.size();
     }
 
-    /// 响应表的当前大小
     size_t fragment_group_receiver_t::response_count() const 
     {
         return pending_response.size();
     }
 
-    /// 临时缓冲区的数据大小
     size_t fragment_group_receiver_t::tmp_buffer_size() const
     {
         return buffer.size();
     }
 
-    /// 清除临时缓冲区的数据
     void fragment_group_receiver_t::clear_tmp_buffer()
     {
         buffer.clear();
