@@ -43,6 +43,11 @@ namespace  chrindex::andren_boost
         return m_websocket == nullptr;
     }
 
+    bool co_websocket::is_closed() const noexcept
+    {
+        return !is_empty() && m_websocket->is_open() == false;
+    }
+
     void co_websocket::set_data_type(websocket_data_type_t type)  noexcept
     {
         if (is_empty() || type == websocket_data_type_t::NONE)[[unlikely]]

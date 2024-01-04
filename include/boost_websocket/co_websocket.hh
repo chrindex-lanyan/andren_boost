@@ -72,6 +72,8 @@ namespace chrindex::andren_boost
         
         bool is_empty() const noexcept;
 
+        bool is_closed() const noexcept;
+
         void set_data_type(websocket_data_type_t type) noexcept;
 
         websocket_data_type_t get_data_type() const noexcept;
