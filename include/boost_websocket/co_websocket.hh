@@ -63,7 +63,7 @@ namespace chrindex::andren_boost
         co_websocket();
         co_websocket(co_websocket && _ano) noexcept;
         explicit co_websocket(base_stream && s) noexcept;
-        explicit co_websocket(co_sockstream && s) noexcept;
+        co_websocket(co_sockstream && s) noexcept;
         ~co_websocket();
         void operator=(co_websocket && _ano) noexcept;
 
@@ -73,6 +73,8 @@ namespace chrindex::andren_boost
         bool is_empty() const noexcept;
 
         bool is_closed() const noexcept;
+
+        void close() noexcept;
 
         void set_data_type(websocket_data_type_t type) noexcept;
 

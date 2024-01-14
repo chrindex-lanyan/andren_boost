@@ -9,6 +9,7 @@
 #include <boost/beast/core/error.hpp>
 #include <boost/beast/http/field.hpp>
 #include <boost/beast/http/fields.hpp>
+#include <boost/beast/websocket/rfc6455.hpp>
 #include <exception>
 #include <future>
 
@@ -46,6 +47,14 @@ namespace  chrindex::andren_boost
     bool co_websocket::is_closed() const noexcept
     {
         return !is_empty() && m_websocket->is_open() == false;
+    }
+
+    void co_websocket::close() noexcept
+    {
+        if (!is_empty())
+        {
+            m_websocket->close(websocket::close_reason{});
+        }
     }
 
     void co_websocket::set_data_type(websocket_data_type_t type)  noexcept
