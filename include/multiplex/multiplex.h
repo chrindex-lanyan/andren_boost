@@ -34,16 +34,18 @@
     uint64_t  id
     uint64_t  all_size
     uint8_t   que_no
-}  25 bytes and only que_0
+    uint32_t  extention: 24
+}  32 bytes and only que_0
 
 数据包  magic_num  = 0x12ff34aa567cc890
 {
     uint64_t  magic_num
     uint64_t  id
-    uint8_t   que_no
+    uint32_t  extention
     uint16_t  size
+    uint8_t   que_no
     uint8_t   first_byte
-}  19 bytes + data's bytes
+}  23 bytes + data's bytes
 
  */
 
@@ -109,18 +111,29 @@ public :
     void add_data_task_to_send(uint64_t id, QueueNum queue_no , std::string const & data);
 
     /// 取出已接收的数据
-    /// 该函数调用后，已接受的数据会被清理。
+    /// 该函数调用后，已接收的数据会被清理。
     std::tuple<bool,std::string> take_out_recv_in_advance(uint64_t id);
 
+    /// 解析一个原始数据。
+    /// 此解析器只能解析一个原始数据，请确保下层协议
+    /// 能够正确分包。
     void parse_raw_data(std::string const & raw_data);
 
+    /// 取几个打包好的数据以发送。
+    /// 不要对数据进行拼接，应该每个单独发送。
     std::vector<std::string> fetch_some_data_to_send();
 
     using OnRecvPackage = std::function<void(multiplex_package_meta_t package)> ;
     using OnNewRequest = std::function<void(multiplex_meta_t meta)> ;
 
+    /// 设置数据包接收回调。
+    /// 每个数据包的接收都会触发此回调，
+    /// 需要自行判断数据是否接收完成。
     void setOnRecvPackage(OnRecvPackage cb);
 
+    /// 设置传送请求回调。
+    /// 发送端传送数据任务前，会发送一个请求，
+    /// 请求内包含了许多信息，用户需要注意总大小信息。
     void setOnNewRequest(OnNewRequest cb);
 
 private :
