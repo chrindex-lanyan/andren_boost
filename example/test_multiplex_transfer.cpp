@@ -18,16 +18,6 @@
 
 #include "multiplex.h"
 
-/*
- 设计思路：
-   1. 一个websocket server 和一个 websocket client；
-   2. 仅一个线程；
-   3. 每个websocket连接，提供一个azure_protocol收发器；
-   4. 每个连接一共并发8个fragment group；
-   6. server和client各有一个连接；
-
-*/
-
 
 using namespace chrindex::andren_boost;
 
