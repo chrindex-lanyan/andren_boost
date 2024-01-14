@@ -11,7 +11,7 @@ main_include_dir = "./include/"
 main_include_boost_tcp_udp_dir = main_include_dir .. "boost_tcp_udp/"
 main_include_boost_http_dir = main_include_dir .. "boost_http/"
 main_include_boost_websocket_dir = main_include_dir .. "boost_websocket/"
-main_include_virtual_session_dir = main_include_dir .. "virtual_session/"
+main_include_multiplex_dir = main_include_dir .. "multiplex/"
 
 include_dir_flags = " -I " .. andren_base_include_dir
                     .. " -I " .. andren_extention_include_dir
@@ -19,7 +19,7 @@ include_dir_flags = " -I " .. andren_base_include_dir
                     .. " -I " .. main_include_boost_tcp_udp_dir
                     .. " -I " .. main_include_boost_http_dir 
                     .. " -I " .. main_include_boost_websocket_dir
-                    .. " -I " .. main_include_virtual_session_dir
+                    .. " -I " .. main_include_multiplex_dir
 
 
 add_cflags("-Wall " .. include_dir_flags )
@@ -98,6 +98,7 @@ example_test_websocket_office_awaitable_client_src = example_src_dir .. "test_we
 example_test_websocket_office_awaitable_server_src = example_src_dir .. "test_websocket_office_awaitable_server.cpp"
 
 example_test_andren_websocket_client_src = example_src_dir .. "test_andren_websocket_client.cpp"
+example_test_multiplex_transfer_src = example_src_dir .. "test_multiplex_transfer.cpp"
 
 
 target("test_hello_world")
@@ -166,5 +167,13 @@ target("test_andren_websocket_client")
     add_links("pthread")
     add_deps("andren-boost_a")
     add_links("boost_context")
+
+target("test_multiplex_transfer")
+    set_kind("binary")
+    add_files(example_test_multiplex_transfer_src)
+    add_links("pthread")
+    add_deps("andren-boost_a")
+    add_links("boost_context")
+
 
     
