@@ -140,7 +140,7 @@ private :
 
     struct _Private
     {
-        std::array<std::deque<std::string>, 8> ready_send;
+        std::array<std::map<uint64_t,std::deque<std::string>>, 8> ready_send;
         std::map<uint64_t, std::deque<std::string>> ready_recv;
 
         OnRecvPackage onRecvPackage;
