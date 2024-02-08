@@ -3,18 +3,14 @@ add_rules("mode.debug", "mode.release")
 
 set_languages("cxx20")
 
-andren_include_dir = "./third_part/submodule/andren/include/"
-andren_base_include_dir = andren_include_dir .. "base/"
-andren_extention_include_dir = andren_include_dir .. "extention/"
-
 main_include_dir = "./include/"
 main_include_boost_tcp_udp_dir = main_include_dir .. "boost_tcp_udp/"
 main_include_boost_http_dir = main_include_dir .. "boost_http/"
 main_include_boost_websocket_dir = main_include_dir .. "boost_websocket/"
 main_include_multiplex_dir = main_include_dir .. "multiplex/"
+json_include_dir = "third_part/json/single_include/"
 
-include_dir_flags = " -I " .. andren_base_include_dir
-                    .. " -I " .. andren_extention_include_dir
+include_dir_flags = " -I " .. json_include_dir 
                     .. " -I " .. main_include_dir
                     .. " -I " .. main_include_boost_tcp_udp_dir
                     .. " -I " .. main_include_boost_http_dir 
@@ -37,24 +33,14 @@ head_h_files = head_dir .. "**.h"
 head_hh_files = head_dir .. "**.hh"
 head_hpp_files = head_dir .. "**.hpp"
 
-andren_head_hpp_file = andren_base_include_dir .. "**.hpp"
-andren_head_hh_file = andren_base_include_dir .. "**.hh"
-andren_head_h_file = andren_base_include_dir .. "**.h"
-
-includes("third_part/submodule/andren/xmake.lua")
-
 target("andren-boost_a")
     set_kind("static")
     add_headerfiles(head_h_files)
     add_headerfiles(head_hh_files)
     add_headerfiles(head_hpp_files)
-    add_headerfiles(andren_head_hpp_file)
-    add_headerfiles(andren_head_hh_file)
-    add_headerfiles(andren_head_h_file)
     add_files(src_c_files)
     add_files(src_cc_files)
     add_files(src_cpp_files)
-    add_deps("andren_a")
     add_links("ssl")
     add_links("uuid")
     add_links("boost_context")
@@ -65,13 +51,9 @@ target("andren-boost")
     add_headerfiles(head_h_files)
     add_headerfiles(head_hh_files)
     add_headerfiles(head_hpp_files)
-    add_headerfiles(andren_head_hpp_file)
-    add_headerfiles(andren_head_hh_file)
-    add_headerfiles(andren_head_h_file)
     add_files(src_c_files)
     add_files(src_cc_files)
     add_files(src_cpp_files)
-    add_deps("andren")
     add_links("ssl")
     add_links("uuid")
     add_links("boost_context")
